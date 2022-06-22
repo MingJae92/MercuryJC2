@@ -1,13 +1,17 @@
 import React from 'react'
 import './Homepage.css'
-// import {Link} from 'react-router-dom'
+import Carousel from 'react-material-ui-carousel'
+
 
 const Homepage = () => {
+  // const imageCollection =[
+  //   {
+  //     description: "Car",
+  //     image: 
+  //   }
+  // ]
   return (
-    <div>
-     
-      {/* <Link to="/" >Homepage</Link> */}
-    </div>
+   <h1>Homepage</h1>
   )
 }
 

@@ -13,21 +13,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
-// import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
-//import {useNavigate} from 'react-router-dom'
-// import Homepage from './routes/Homepage';
-// import AboutMe from './routes/AboutMe';
-// import Commissions from './routes/Commissions';
-// import MyWork from './routes/MyWork';
-// import { Link } from '@mui/material';
-
-// import Homepage from './routes/Homapage';
-// import MyWork from './routes/MyWork';
-// import Commissions from './Commissions';
-// import Shop from './routes/Shop';
-
 
 const drawerWidth = 240;
 
@@ -79,7 +66,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 
 const Sidebar = ({ navigate }) => {
-// const history = useNavigate()
 
   const menuItems =[
     {
