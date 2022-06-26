@@ -1,17 +1,18 @@
 import React from 'react'
 import './Homepage.css'
 import Carousel from 'react-material-ui-carousel'
-
+import ArtWorkImages from '../ArtWorkImages'
 
 const Homepage = () => {
-  // const imageCollection =[
-  //   {
-  //     description: "Car",
-  //     image: 
-  //   }
-  // ]
+  
   return (
-   <h1>Homepage</h1>
+      <div>
+        <h1>Homepage</h1>
+          <Carousel>
+            {ArtWorkImages.map((src)=>(<img src={src.path}/>))}
+          </Carousel>
+      </div>
+   
   )
 }
 
