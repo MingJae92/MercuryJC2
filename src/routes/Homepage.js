@@ -7,9 +7,9 @@ const Homepage = () => {
   
   return (
       <div>
-        <h1>Homepage</h1>
+        {/* <h1>Homepage</h1> */}
           <Carousel>
-            {ArtWorkImages.map((src)=>(<img src={src.path}/>))}
+            {ArtWorkImages.map((src)=>(<img className='art_work' src={src.path}/>))}
           </Carousel>
       </div>
    

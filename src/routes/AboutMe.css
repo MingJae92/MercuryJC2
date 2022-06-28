@@ -2,3 +2,17 @@ h1{
     display: flex;
     justify-content: center;
 }
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; 
+}
