@@ -24,7 +24,7 @@ const MyWork = () => {
                 (item)=>(
                   <Grid item xs={4}>
                     <Item><h2>{item.description}</h2><img src={item.path}/></Item>
-                    
+          
                   </Grid>
                   )
               )}
