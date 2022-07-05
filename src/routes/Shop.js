@@ -24,7 +24,6 @@ const Shop = () => {
                 (item)=>(
                   <Grid item xs={3}>
                     <Item><h2>{item.name}</h2><img src={item.img}/></Item>
-                   
                   </Grid>
                   )
               )}
