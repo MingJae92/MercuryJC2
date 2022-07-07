@@ -23,7 +23,11 @@ const Shop = () => {
               {ShopItems.map(
                 (item)=>(
                   <Grid item xs={4}>
-                    <Item><h4>{item.name}</h4><img src={item.img}/></Item>
+                    <Item>
+                      <h4>{item.name}</h4>
+                      <img src={item.img}/>
+                    </Item>
+
                   </Grid>
                   )
               )}
