@@ -17,6 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const Shop = () => {
+  const navigate = useNavigate()
   return (
     <div>
       <Box >
