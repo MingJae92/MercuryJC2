@@ -8,7 +8,7 @@ const Giwp = () => {
 
   return (
     <div>
-      
+      <h1>Hello</h1>
       <img src={GiwpImage}/>
       
 

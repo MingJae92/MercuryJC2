@@ -41,7 +41,7 @@ const ShopItems = [
     {
         name:"A5 Genshin Impact Weekly Planner",
         img: giwp,
-        path:"A5-Genshin-ImpactWeekly-Planner", element:<Giwp/>
+        path:"A5-Genshin-Impact-Weekly-Planner", element:<Giwp/>
     },
     {
        name:"Animal Crossing",

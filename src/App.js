@@ -29,10 +29,10 @@ function App() {
               <Route path="/Commissions" element={<Commissions />}></Route>
               <Route path="/My-Work" element={<MyWork />}></Route>
               <Route  path="/Shop"  element={<Shop/>}>
-                <Route path="A5-Genshin-Impact-Weekly-Planner" element={<Giwp />} image={Giwp}/>
+                <Route path="A5-Genshin-Impact-Weekly-Planner" element={<Giwp />} />
                 <Route path="Animal-Crossing-ACNH-Inspired-Leaf-Subscriber-Badges-Package" element={<Ac/>}/>
               </Route>
-              
+              {/* <Route path="A5-Genshin-Impact-Weekly-Planner" element={<Giwp />} /> */}
               <Route path="/Contact-Me" element={<ContactMe />}></Route>
           </Routes>  
         
