@@ -1,5 +1,5 @@
 import React from 'react'
-import BcsImage from "./ShopItems/bcs.jpg"
+import BcsImage from "../ShopItems/bcs.jpg"
 
 const Bcs = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import CpsbImage from './ShopItems/cpsb.jpg'
+import CpsbImage from '../ShopItems/cpsb.jpg'
 
 const Cpsb = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import SbspaImage from './ShopItems/sbspa.jpg'
+import SbspaImage from '../ShopItems/sbspa.jpg'
 
 const Sbspa = () => {
   return (

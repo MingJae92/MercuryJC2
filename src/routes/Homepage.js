@@ -11,6 +11,7 @@ const Homepage = () => {
           <Carousel>
             {ArtWorkImages.map((src)=>(<img className='art_work' src={src.path}/>))}
           </Carousel>
+
       </div>
    
   )

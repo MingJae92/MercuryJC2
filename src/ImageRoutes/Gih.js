@@ -1,6 +1,6 @@
 import React from 'react'
-import GihImage1 from './ShopItems/gih1.jpg'
-import GihImage2 from './ShopItems/gih2.jpg'
+import GihImage1 from '../ShopItems/gih1.jpg'
+import GihImage2 from '../ShopItems/gih2.jpg'
 
 
 const Gih = () => {

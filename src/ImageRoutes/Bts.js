@@ -1,5 +1,5 @@
 import React from 'react'
-import BtsImage from './ShopItems/bts.jpg'
+import BtsImage from '../ShopItems/bts.jpg'
 
 const Bts = () => {
   return (

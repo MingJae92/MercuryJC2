@@ -1,8 +1,8 @@
 import React from 'react'
-import KdaImage1 from './ShopItems/kda1.jpg'
-import KdaImage2 from './ShopItems/kda2.jpg'
-import KdaImage3 from './ShopItems/kda3.jpg'
-import KdaImage4 from './ShopItems/kda4.jpg'
+import KdaImage1 from '../ShopItems/kda1.jpg'
+import KdaImage2 from '../ShopItems/kda2.jpg'
+import KdaImage3 from '../ShopItems/kda3.jpg'
+import KdaImage4 from '../ShopItems/kda4.jpg'
 
 const Kda = () => {
   return (

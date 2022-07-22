@@ -1,6 +1,6 @@
 import React from 'react'
-import MahvsImage1 from './ShopItems/mahvs1.jpg'
-import MahvsImage2 from './ShopItems/mahvs2.jpg'
+import MahvsImage1 from '../ShopItems/mahvs1.jpg'
+import MahvsImage2 from '../ShopItems/mahvs2.jpg'
 
 
 const Mahvs = () => {

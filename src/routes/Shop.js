@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import {Link, Outlet, useParams, useNavigate } from "react-router-dom"
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -21,18 +22,19 @@ const Shop = () => {
       <Box >
             <Grid container spacing={1}>
               {ShopItems.map(
-                (item)=>(
+                (item )=>(
                   <Grid item xs={4}>
-                    <Item>
+                    <Item >
                       <h4>{item.name}</h4>
-                      <img src={item.img}/>
+                    <Link to={item.path}><img src={item.img}/></Link>
+                     
                     </Item>
-
+                   
                   </Grid>
                   )
               )}
             </Grid>
-            </Box>
+      </Box>
       
 
     </div>

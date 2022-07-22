@@ -1,6 +1,6 @@
 import React from 'react'
-import SssbImage1 from './ShopItems/Sssb1.jpg'
-import SssbImage2 from './ShopItems/Sssb2.jpg'
+import SssbImage1 from '../ShopItems/Sssb1.jpg'
+import SssbImage2 from '../ShopItems/Sssb2.jpg'
 
 const Sssb = () => {
   return (

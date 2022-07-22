@@ -1,7 +1,7 @@
 import React from 'react'
-import GicvsImage1 from './ShopItems/gicvs1.jpg'
-import GicvsImage2 from './ShopItems/gicvs2.jpg'
-import GicvsImage3 from './ShopItems/gicvs3.jpg'
+import GicvsImage1 from '../ShopItems/gicvs1.jpg'
+import GicvsImage2 from '../ShopItems/gicvs2.jpg'
+import GicvsImage3 from '../ShopItems/gicvs3.jpg'
 
 const Gicvs = () => {
   return (

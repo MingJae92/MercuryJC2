@@ -1,5 +1,5 @@
 import React from 'react'
-import AcImage from './ShopItems/ac.jpg'
+import AcImage from '../ShopItemsBag/ac.jpg'
 
 
 
