@@ -4,8 +4,7 @@ import { Outlet, useParams } from 'react-router'
 
 
 const Giwp = () => {
-
-
+  // const params = useParams();
   return (
     <div>
       <h1>A5-Genshin-Impact-Weekly-Planner</h1>

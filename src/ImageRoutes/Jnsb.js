@@ -1,5 +1,5 @@
 import React from 'react'
-import JnsbImage from '../ShopItems/jnsb.jpg'
+import JnsbImage from '../ShopItemsBag/jnsb.jpg'
 
 const Jnsb = () => {
   return (

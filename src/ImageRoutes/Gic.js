@@ -1,6 +1,6 @@
 import React from 'react'
-import GicImage1 from '../ShopItem/gic1.jpg'
-import GicImage2 from '../ShopItem/gic2.jpg'
+import GicImage1 from '../ShopItemsBag/gic1.jpg'
+import GicImage2 from '../ShopItemsBag/gic2.jpg'
 
 const Gic = () => {
   return (

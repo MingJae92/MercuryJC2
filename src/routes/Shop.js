@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import {Link, Outlet, useParams, useNavigate } from "react-router-dom"
+import {Link} from "react-router-dom"
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -17,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const Shop = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   return (
     <div>
       <Box >
@@ -27,8 +27,7 @@ const Shop = () => {
                   <Grid item xs={4}>
                     <Item >
                       <h4>{item.name}</h4>
-                    <Link to={item.path}><img src={item.img}/></Link>
-                     
+                      <Link to={`/Shop/${item.path}`}><img src={item.img}/></Link>
                     </Item>
                    
                   </Grid>

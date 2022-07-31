@@ -1,6 +1,6 @@
 import React from 'react'
-import CspsbbImage1 from '../ShopItems/cspsbb1.jpg'
-import CspsbbImage2 from '../ShopItems/cspsbb2.jpg'
+import CspsbbImage1 from '../ShopItemsBag/cspsbb1.jpg'
+import CspsbbImage2 from '../ShopItemsBag/cspsbb2.jpg'
 
 const Cspsbb = () => {
   return (

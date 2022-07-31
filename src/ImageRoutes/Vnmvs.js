@@ -1,9 +1,9 @@
 import React from 'react'
-import VnmvsImage1 from '../ShopItems/vnmvs1.jpg'
-import VnmvsImage2 from '../ShopItems/vnmvs2.jpg'
-import VnmvsImage3 from '../ShopItems/vnmvs3.jpg'
-import VnmvsImage4 from '../ShopItems/vnmvs4.jpg'
-import VnmvsImage5 from '../ShopItems/vnmvs5.jpg'
+import VnmvsImage1 from '../ShopItemsBag/vnmvs1.jpg'
+import VnmvsImage2 from '../ShopItemsBag/vnmvs2.jpg'
+import VnmvsImage3 from '../ShopItemsBag/vnmvs3.jpg'
+import VnmvsImage4 from '../ShopItemsBag/vnmvs4.jpg'
+import VnmvsImage5 from '../ShopItemsBag/vnmvs5.jpg'
 
 const Vnmvs = () => {
   return (

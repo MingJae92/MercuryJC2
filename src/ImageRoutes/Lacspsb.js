@@ -1,5 +1,5 @@
 import React from 'react'
-import LacspsbImage from '../ShopItems/laccspsb.jpg'
+import LacspsbImage from '../ShopItemsBag/lacspsb.jpg'
 
 const Lacspsb = () => {
   return (

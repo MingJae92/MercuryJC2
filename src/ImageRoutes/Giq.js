@@ -1,7 +1,7 @@
 import React from 'react'
-import Giqimage1 from '../ShopItems/giq1.jpg'
-import Giqimage2 from '../ShopItems/giq2.jpg'
-import Giqimage3 from '../ShopItems/giq3.jpg'
+import Giqimage1 from '../ShopItemsBag/giq1.jpg'
+import Giqimage2 from '../ShopItemsBag/giq2.jpg'
+import Giqimage3 from '../ShopItemsBag/giq3.jpg'
 
 const Giq = () => {
   return (

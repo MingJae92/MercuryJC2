@@ -1,6 +1,6 @@
 import React from 'react'
-import DdhvsImage1 from '../ShopItem/ddhvs1.jpg'
-import DdhvsImage2 from '../ShopItem/ddhvs2.jpg'
+import DdhvsImage1 from '../ShopItemsBag/ddhvs1.jpg'
+import DdhvsImage2 from '../ShopItemsBag/ddhvs2.jpg'
 
 
 const Ddhvs = () => {

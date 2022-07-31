@@ -1,5 +1,5 @@
 import React from 'react'
-import GiesbImage from '../ShopItem/giesb.jpg'
+import GiesbImage from '../ShopItemsBag/giesb.jpg'
 
 const Giesb = () => {
   return (

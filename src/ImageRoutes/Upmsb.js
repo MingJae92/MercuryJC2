@@ -1,6 +1,6 @@
 import React from 'react'
-import UpmsbImage1 from '../ShopItems/upmsb1.jpg'
-import UpmsbImage2 from '../ShopItems/upmsb2.jpg'
+import UpmsbImage1 from '../ShopItemsBag/upmsb1.jpg'
+import UpmsbImage2 from '../ShopItemsBag/upmsb2.jpg'
 
 const Upmsb = () => {
   return (
