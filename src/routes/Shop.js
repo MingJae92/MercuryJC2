@@ -24,7 +24,7 @@ const Shop = () => {
             <Grid container spacing={1}>
               {ShopItems.map(
                 (item )=>(
-                  <Grid item xs={4}>
+                  <Grid item xs={6}>
                     <Item >
                       <h4>{item.name}</h4>
                       <Link to={`/Shop/${item.path}`}><img src={item.img}/></Link>

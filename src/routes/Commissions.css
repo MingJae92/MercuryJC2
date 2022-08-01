@@ -1,0 +1,13 @@
+
+h5, p{
+    font-family: 'Permanent Marker', cursive;
+    padding: 10px;
+    text-align:center;
+}
+
+.illustrations img{
+    height: 500px;
+    width: 500px;
+    padding: 10px;
+    
+}
