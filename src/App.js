@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Mercury JC!!!</h1>
+        
          <Sidebar navigate={navigation} />
          {console.log(location.pathname)}
 

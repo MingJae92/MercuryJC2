@@ -19,14 +19,17 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const Shop = () => {
+ 
   // const navigate = useNavigate()
   return (
     <div>
+       <h1>Shop, Etsy-Previews only</h1>
+       <p>These images are previews</p>
       <Box >
             <Grid container spacing={1}>
               {ShopItems.map(
                 (item )=>(
-                  <Grid item xs={6}>
+                  <Grid item xs={4}>
                     <Item >
                       <h4>{item.name}</h4>
                       <Link to={`/Shop/${item.path}`}><img src={item.img}/></Link>

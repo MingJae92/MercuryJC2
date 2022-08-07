@@ -16,7 +16,7 @@ const ContactMe = () => {
         <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto" }}>
           <CardContent>
             <Typography gutterBottom variant="h5">
-              Contact Us
+              
           </Typography> 
             <Typography variant="body2" color="textSecondary" component="p" gutterBottom>
             <p>Fill up the form and our team will get back to you within 24 hours.</p>  

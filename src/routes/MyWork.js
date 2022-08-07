@@ -18,6 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const MyWork = () => {
   return (
     <div>
+      <h1>My Art Work</h1>
      <div>
           <Box >
             <Grid container spacing={1}>

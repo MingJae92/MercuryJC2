@@ -85,7 +85,7 @@ const Sidebar = ({ navigate }) => {
       onClick:()=>navigate("/My-Work")
     },
     {
-      text:"Shop",
+      text:"Shop-Etsy-Preview",
       onClick:()=>navigate("/Shop")
     },
     {
