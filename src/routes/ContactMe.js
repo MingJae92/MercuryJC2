@@ -2,9 +2,8 @@ import React from 'react'
 import "./ContactMe.css"
 import Grid from '@mui/material/Grid';
 import { TextField, Button, Card, CardContent, Typography } from '@mui/material';
-
-
-
+import "./Footer.css"
+import Footer from './Footer';
 
 const ContactMe = () => {
   return (
@@ -48,6 +47,7 @@ const ContactMe = () => {
           </CardContent>
         </Card>
       </Grid>
+      <Footer/>
     </div>
   )
 }

@@ -1,0 +1,19 @@
+.footer{
+    position: sticky;
+    color: red;
+}
+
+.instagram_icon{
+    padding: 0.25em;
+    margin: 1em;
+}
+
+.twitter_icon{
+    padding: 0.25em;
+    margin: 1em;
+}
+
+.twitch_icon{
+    padding: 0.25em;
+    margin: 1em;
+}

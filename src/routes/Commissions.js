@@ -11,6 +11,7 @@ import Waistup1 from "../ArtCommissionImages/Illustrationsimplecolour/waistup.jp
 import Headshot2 from "../ArtCommissionImages/Chibi/headshot.png"
 import Fullbody from "../ArtCommissionImages/Chibi/fullbody.png"
 import Emotes from "../ArtCommissionImages/Emotebadges/emotes.jpeg"
+import Footer from './Footer'
 
 const Commissions = () => {
   return (
@@ -40,6 +41,8 @@ const Commissions = () => {
       <h1>EMOTES</h1>
         <h5>STREAM EMOTES</h5>
         <img src={Emotes}/>
+
+    <Footer/>
     </div>
   )
 }
