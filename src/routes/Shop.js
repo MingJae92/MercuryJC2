@@ -23,10 +23,10 @@ const Shop = () => {
   // const navigate = useNavigate()
   return (
     <div>
-       <h1>Shop, Etsy-Previews only</h1>
+       <h1>Shop, Etsy-Previews</h1>
        <p>These images are previews</p>
       <Box >
-            <Grid container spacing={1}>
+            <Grid container spacing={3}>
               {ShopItems.map(
                 (item )=>(
                   <Grid item xs={4}>

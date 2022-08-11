@@ -1,7 +1,7 @@
 img{
     height: 40vh;
     width: 30vw;
-    
+  
 }
 
 h1{
@@ -10,4 +10,6 @@ h1{
 
 h4{
     font-family: 'Permanent Marker', cursive;
+    padding: 0;
+    margin: 0;
 }

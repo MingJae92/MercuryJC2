@@ -1,13 +1,53 @@
 import React from 'react'
 import GijImage1 from '../ShopItemsBag/gij1.jpg'
 import GijImage2 from '../ShopItemsBag/gij2.jpg'
+import { useState, useCallback } from 'react';
+import ImageViewer from 'react-simple-image-viewer';
+
 
 const Gij = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+
+  const galleryImage = [
+    GijImage1,
+    GijImage2
+  ]
+  
+  const openImageViewer = useCallback((index) => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
   return (
     <div>
-      <img src={GijImage1}/>
-      <img src={GijImage2}/>
-      
+       <h1>Genshin-Impact-Music-Clear-Acrylic-Charm-JEAN</h1>
+       {/* <img src={AcImage}/> */}
+       {galleryImage.map((src, index) => (
+        <img
+          src={ src }
+          onClick={ () => openImageViewer(index) }
+          // width="300"
+          // key={ index }
+          
+        />
+      ))}
+
+      {isViewerOpen && (
+        <ImageViewer
+          src={ galleryImage}
+          // width="400"
+          // height="600"
+          currentIndex={ currentImage }
+          disableScroll={ false }
+          closeOnClickOutside={ true }
+          onClose={ closeImageViewer }
+        />
+      )}
     </div>
   )
 }
