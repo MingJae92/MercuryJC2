@@ -5,9 +5,13 @@ import {GrTwitter} from "react-icons/gr"
 import {FaTwitch} from "react-icons/fa"
 import { IconContext } from "react-icons";
 
+
+
+
 const Footer = () => {
+  
   return (
-    <div>
+    <div className="footer" >
         <AppBar position="sticky" color="primary">
           <Container maxWidth="md">
             <Toolbar>

@@ -7,6 +7,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import {Link} from "react-router-dom"
 import Footer from './Footer';
+import ScrollToTop from './ScrollUpButton';
  
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -40,7 +41,7 @@ const Shop = () => {
               )}
             </Grid>
       </Box>
-      
+    <ScrollToTop/>
     <Footer/>
     </div>
   )
