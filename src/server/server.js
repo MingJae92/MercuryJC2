@@ -55,7 +55,7 @@ app.get("/server", (req, res)=>{
 
 app.use("/v1", route);
 
-app.listen(port, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log(`Listening on port ${port} here we go!`);
 })
 
