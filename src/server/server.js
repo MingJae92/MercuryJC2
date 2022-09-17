@@ -12,8 +12,8 @@ const port = process.env.PORT || 5000;
 //     // const transporter = nodemailer.createTransport({
 //     //     service:"gmail",
 //     //     auth:{
-//     //         user:"mingchi1992@gmail.com",
-//     //         pass:"migchiwong1992"
+//     //         user:"",
+//     //         pass:""
 //     //     },
 //     // });
 
@@ -64,8 +64,8 @@ const contactEmail =nodemailer.createTransport({
     port:465,
     secure:true,
     auth:{
-    user:"mingchi1992wong@gmail.com",
-    pass:"Mingchiwong1992!",
+    user:"",
+    pass:"",
     },
 });
 
