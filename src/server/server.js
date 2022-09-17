@@ -5,7 +5,7 @@ import nodemailer from "nodemailer"
 const app = express();
 
 const route = express.Router();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT 
 
 // app.post("/", (req, res)=>{
 //     console.log(req.body)
