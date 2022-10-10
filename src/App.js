@@ -43,6 +43,8 @@ import Upmsb from "./ImageRoutes/Upmsb";
 import Vnmvs from "./ImageRoutes/Vnmvs";
 
 function App() {
+  //Navigation for sliding nav bar. 
+  //Each route path from line 58 directs the users to the appropriate page. 
   const navigation = useNavigate();
   const location = useLocation();
   return (

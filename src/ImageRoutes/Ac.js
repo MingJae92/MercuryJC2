@@ -2,12 +2,17 @@ import React from 'react'
 import AcImage from '../ShopItemsBag/ac.jpg'
 import { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Comments  from '../routes/Comments';
+
+//React simple image viewer package was used for the image viewer.
+
 
 const Ac = () => {
   
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-
+//galleryImage then stores the imported art work for every image.
+//Each image is then mapped out once the user clicks on the art work image. 
   const galleryImage = [
     AcImage
   ]
@@ -46,6 +51,7 @@ const Ac = () => {
           onClose={ closeImageViewer }
         />
       )}
+    <Comments/>
     </div>
   )
 }

@@ -3,7 +3,10 @@ import GijImage1 from '../ShopItemsBag/gij1.jpg'
 import GijImage2 from '../ShopItemsBag/gij2.jpg'
 import { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Comments  from '../routes/Comments';
 
+//galleryImage then stores the imported art work for every image.
+//Each image is then mapped out once the user clicks on the art work image. 
 
 const Gij = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -48,6 +51,7 @@ const Gij = () => {
           onClose={ closeImageViewer }
         />
       )}
+    <Comments/>
     </div>
   )
 }

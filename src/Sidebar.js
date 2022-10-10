@@ -64,7 +64,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 
-
+//navigate is a prop thats being passed in to the sidebar component so that users can be directed to the appropriate pages.
 const Sidebar = ({ navigate }) => {
 
   const menuItems =[

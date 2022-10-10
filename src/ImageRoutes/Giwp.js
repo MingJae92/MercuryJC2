@@ -2,8 +2,10 @@ import React from 'react'
 import GiwpImage from '../ShopItemsBag/giwp.jpg'
 import { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Comments  from '../routes/Comments';
 
-
+//galleryImage then stores the imported art work for every image.
+//Each image is then mapped out once the user clicks on the art work image. 
 
 const Giwp = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -47,6 +49,7 @@ const Giwp = () => {
           onClose={ closeImageViewer }
         />
       )}
+    <Comments/>
     </div>
   )
 }

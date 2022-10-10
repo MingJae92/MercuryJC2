@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import {IoIosArrowDropupCircle} from "react-icons/io";
 import "./ScrollUpButton.css"
 
+//I used a react icon package for the scroll up and down button
+
 const ScrollToTop = () => {
     const [showTopBtn, setShowTopBtn]=useState(false);
     useEffect(()=>{

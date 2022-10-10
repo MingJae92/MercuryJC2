@@ -3,8 +3,10 @@ import MahvsImage1 from '../ShopItemsBag/mahvs1.jpg'
 import MahvsImage2 from '../ShopItemsBag/mahvs2.jpg'
 import { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Comments  from '../routes/Comments';
 
-
+//galleryImage then stores the imported art work for every image.
+//Each image is then mapped out once the user clicks on the art work image. 
 
 const Mahvs = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -49,6 +51,7 @@ const Mahvs = () => {
           onClose={ closeImageViewer }
         />
       )}
+    <Comments/>
     </div>
   )
 }

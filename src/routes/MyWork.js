@@ -8,6 +8,9 @@ import Box from '@mui/material/Box';
 import Footer from './Footer';
 import ScrollToTop from './ScrollUpButton';
 
+//Material ui was used for the layout to structure the webpage.
+//ArtWorkImages is mapped out and then item then uses the .description and .path property to display each image and title. 
+
 const Item = styled(Paper)(({ theme }) => ({
   // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   // ...theme.typography.body2,
@@ -27,7 +30,6 @@ const MyWork = () => {
                 (item)=>(
                   <Grid item xs={4}>
                     <Item><h2>{item.description}</h2><img src={item.path}/></Item>
-          
                   </Grid>
                   )
               )}

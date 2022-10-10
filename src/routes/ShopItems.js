@@ -66,7 +66,7 @@ import upmsb1 from "../ShopItemsBag/upmsb1.jpg"
 import Upmsb from "../ImageRoutes/Upmsb"
 import vnmvs1 from "../ShopItemsBag/vnmvs1.jpg"
 import Vnmvs from "../ImageRoutes/Vnmvs"
-
+//ShopItems component to store all the art work for the shop webpage
 const ShopItems = [
    
     {

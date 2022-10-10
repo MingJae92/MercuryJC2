@@ -4,6 +4,10 @@ import GicvsImage2 from '../ShopItemsBag/gicvs2.jpg'
 import GicvsImage3 from '../ShopItemsBag/gicvs3.jpg'
 import { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Comments  from '../routes/Comments';
+
+//galleryImage then stores the imported art work for every image.
+//Each image is then mapped out once the user clicks on the art work image. 
 
 const Gicvs = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -50,6 +54,7 @@ const Gicvs = () => {
           onClose={ closeImageViewer }
         />
       )}
+    <Comments/>
     </div>
   )
 }

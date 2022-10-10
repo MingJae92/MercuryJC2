@@ -8,7 +8,10 @@ import Box from '@mui/material/Box';
 import {Link} from "react-router-dom"
 import Footer from './Footer';
 import ScrollToTop from './ScrollUpButton';
- 
+
+//ShopItems component stores all the images for the shop webpage.
+//ShopItems component is then applied with the map method to display the shop items.
+//In the route path on line 38, the link is mapping out each individual link for each image. 
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -20,8 +23,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const Shop = () => {
- 
-  // const navigate = useNavigate()
+
   return (
     <div>
        <h1>Shop, Etsy-Previews</h1>

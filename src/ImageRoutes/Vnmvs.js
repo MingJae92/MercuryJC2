@@ -6,7 +6,10 @@ import VnmvsImage4 from '../ShopItemsBag/vnmvs4.jpg'
 import VnmvsImage5 from '../ShopItemsBag/vnmvs5.jpg'
 import { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Comments  from '../routes/Comments';
 
+//galleryImage then stores the imported art work for every image.
+//Each image is then mapped out once the user clicks on the art work image. 
 
 const Vnmvs = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -54,6 +57,7 @@ const Vnmvs = () => {
           onClose={ closeImageViewer }
         />
       )}
+    <Comments/>
     </div>
   )
 }

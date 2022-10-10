@@ -3,7 +3,10 @@ import SbsbImage1 from '../ShopItemsBag/sbsb1.jpg'
 import SbsbImage2 from '../ShopItemsBag/sbsb2.jpg'
 import { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Comments  from '../routes/Comments';
 
+//galleryImage then stores the imported art work for every image.
+//Each image is then mapped out once the user clicks on the art work image. 
 
 const Sbsb = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -48,6 +51,7 @@ const Sbsb = () => {
           onClose={ closeImageViewer }
         />
       )}
+    <Comments/>
     </div>
   )
 }

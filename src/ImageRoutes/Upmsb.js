@@ -3,6 +3,10 @@ import UpmsbImage1 from '../ShopItemsBag/upmsb1.jpg'
 import UpmsbImage2 from '../ShopItemsBag/upmsb2.jpg'
 import { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Comments  from '../routes/Comments';
+
+//galleryImage then stores the imported art work for every image.
+//Each image is then mapped out once the user clicks on the art work image. 
 
 const Upmsb = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -47,6 +51,7 @@ const Upmsb = () => {
           onClose={ closeImageViewer }
         />
       )}
+    <Comments/>
     </div>
   )
 }

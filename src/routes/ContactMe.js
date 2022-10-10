@@ -11,15 +11,18 @@ const [status, setStatus] = useState("Submit")
 const handleSubmit =async(e)=>{
   e.preventDefault();
   setStatus("Send")
-
-  const {name, email, message} = e.target.elements;
+// firstname, lastname, email and message values are assigned with e.target.elements.
+  const {firstname, lastname, email, message} = e.target.elements;
+//details object will store all the values from the form once the user has filled out the form. 
   let details = {
-    name:name.value,
+    name:firstname.value+lastname.value,
     email:email.value,
     message:message.value,
   }
 
-  let response = await fetch("http://localhost:5000", {
+  console.log(details)
+//response will then fetch the data from the API which is http://localhost:5000/contact. 
+  let response = await fetch("http://localhost:5000/contact", {
     method:"POST",
     headers:{
       "Content-Type": "application/json",
@@ -27,8 +30,12 @@ const handleSubmit =async(e)=>{
     body:JSON.stringify(details)
   });
   setStatus("Submit");
+//Once users has submitted their detail the API will then respond to the request. 
+//result variable will then wait for a response from the API.
   let result = await response.json();
   alert(result)
+//console.log will then show us the whether the users info was passed onto the API.
+  console.log(result)
 }
 
   return (
@@ -49,19 +56,20 @@ const handleSubmit =async(e)=>{
             <form onSubmit={handleSubmit} method="POST">
               <Grid container spacing={1}>
                 <Grid xs={12} sm={6} item>
-                  <TextField placeholder="Enter first name" label="First Name" variant="outlined" fullWidth required />
+                  <TextField placeholder="Enter first name" name="firstname" variant="outlined" fullWidth required />
+
                 </Grid>
                 <Grid xs={12} sm={6} item>
-                  <TextField placeholder="Enter last name" label="Last Name" variant="outlined"  fullWidth required />
+                  <TextField placeholder="Enter last name" name="lastname" variant="outlined"  fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField type="email" placeholder="Enter email" label="Email" variant="outlined"  fullWidth required />
+                  <TextField type="email" placeholder="Enter email" name="email" variant="outlined"  fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField type="number" placeholder="Enter phone number" label="Phone" variant="outlined"  fullWidth required />
+                  <TextField type="number" placeholder="Enter phone number" name="phone" variant="outlined"  fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField label="Message" multiline rows={4} placeholder="Type your message here" variant="outlined"  fullWidth required />
+                  <TextField name="message" multiline rows={4} placeholder="Type your message here" variant="outlined"  fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
                   <Button type={"submit"} variant="contained" color="primary" fullWidth>{status}</Button>

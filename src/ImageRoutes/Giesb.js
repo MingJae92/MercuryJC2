@@ -2,6 +2,10 @@ import React from 'react'
 import GiesbImage from '../ShopItemsBag/giesb.jpg'
 import { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Comments  from '../routes/Comments';
+
+//galleryImage then stores the imported art work for every image.
+//Each image is then mapped out once the user clicks on the art work image. 
 
 const Giesb = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -45,6 +49,7 @@ const Giesb = () => {
           onClose={ closeImageViewer }
         />
       )}
+    <Comments/>
     </div>
   )
 }

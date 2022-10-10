@@ -27,6 +27,8 @@ import WindblumeFestivalKaeya from "./ArtWorkImages/WindblumeFestivalKaeya.jpeg"
 import YaeMiko from "./ArtWorkImages/YaeMiko.jpg"
 import YearOfTheTiger from "./ArtWorkImages/YearOfTheTiger.jpg"
 
+//Collection of images which will be mapped out onto the my work page.
+//Description and path object properties will be mapped out and displayed on to my work page.
 
 const ArtWorkImages = [
   
