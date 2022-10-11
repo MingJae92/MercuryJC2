@@ -1,16 +1,35 @@
 import { TextField, Button, Card, CardContent, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import "./Comments.css"
 
 
 const Comments = () => {
-   const [comments, setComments] = useState();
+  const [userName, setUserName]=useState("")
+  const [comments, setComments]=useState("")
+  const [newComments, setNewComments]=useState("")
 
-   const submit = (e)=>{
+  const updateInput = (e)=>{
+    const {name, value} = e.target 
+  }
+
+  const postComment = (e)=>{
     e.preventDefault();
+    const {userName, newComments} = useState("")
+    if(userName.trim() || newComments.trim()==="") return;
+    const data ={
+      name:userName,
+      text: newComments,
+      votes: 0
+    };
     
-   }
+    useEffect(()=>{
+      axios.post("/localhost/5000/comment", data).then(res.setNewComments(res.data))
+    },[])
+
+  const submit = ()=>{
+    
+  }
   return (
     <div>
       <Grid>
