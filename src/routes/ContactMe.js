@@ -40,7 +40,7 @@ const handleSubmit =async(e)=>{
 
   return (
     <div>
-      <h1>Contact Me!!!</h1>
+      <h1>Contact Me</h1>
       <Typography gutterBottom variant="h3" align="center">
        
        </Typography>
