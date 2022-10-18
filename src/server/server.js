@@ -4,21 +4,37 @@ import nodemailer from "nodemailer"
 import Pusher from 'pusher'
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
-// require('dotenv').config({ path: '../config/.env' });
+import mongoose from "mongoose"
+
 
 dotenv.config({path:'../../config/.env'})
 const app = express();
-// console.log(process.env);
+const databaseURL = process.env.MONGO_URL
+
+const connectDB= async()=>{
+    try {
+         mongoose.connect(databaseURL, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+        });
+        console.log('Database connected');
+      } catch (err) {
+        console.log(err);
+        process.exit(1);
+      }
+
+}
 
 const route = express.Router();
 const port = process.env.PORT 
+connectDB()
 
 app.use(cors());
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/server", (req, res)=>{
+app.get("/", (req, res)=>{
     res.send("Welcome to my server guys!!!")
 })
 
