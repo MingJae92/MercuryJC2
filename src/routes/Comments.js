@@ -5,27 +5,27 @@ import "./Comments.css"
 
 
 const Comments = () => {
-  const [userName, setUserName]=useState("")
-  const [comments, setComments]=useState("")
-  const [newComments, setNewComments]=useState("")
+  // const [userName, setUserName]=useState("")
+  // const [comments, setComments]=useState("")
+  // const [newComments, setNewComments]=useState("")
 
-  const updateInput = (e)=>{
-    const {name, value} = e.target 
-  }
+  // const updateInput = (e)=>{
+  //   const {name, value} = e.target 
+  // }
 
-  const postComment = (e)=>{
-    e.preventDefault();
-    const {userName, newComments} = useState("")
-    if(userName.trim() || newComments.trim()==="") return;
-    const data ={
-      name:userName,
-      text: newComments,
-      votes: 0
-    };
+  // const postComment = (e)=>{
+  //   e.preventDefault();
+  //   const {userName, newComments} = useState("")
+  //   if(userName.trim() || newComments.trim()==="") return;
+  //   const data ={
+  //     name:userName,
+  //     text: newComments,
+  //     votes: 0
+  //   };
     
-    useEffect(()=>{
-      axios.post("/localhost/5000/comment", data).then(res.setNewComments(res.data))
-    },[])
+  //   useEffect(()=>{
+  //     axios.post("/localhost/5000/comment", data).then(res.setNewComments(res.data))
+  //   },[])
 
   const submit = ()=>{
     

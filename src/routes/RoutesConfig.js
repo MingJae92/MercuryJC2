@@ -3,6 +3,7 @@ import AboutMe from "./AboutMe"
 import Commissions from './Commissions';
 import Homepage from './Homepage';
 import MyWork from './MyWork';
+import Shop from './Shop'
 //RoutesConfig defines where all the routes are stored. 
 
 const RoutesConfig = [

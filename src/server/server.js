@@ -3,15 +3,15 @@ import cors from "cors"
 import nodemailer from "nodemailer"
 import Pusher from 'pusher'
 import bodyParser from "body-parser"
-import DataStore  from "nedb"
-// import dotenv from "dotenv"
-// require('dotenv').config({ path: '.env' });
+import dotenv from "dotenv"
+// require('dotenv').config({ path: '../config/.env' });
 
+dotenv.config({path:'../../config/.env'})
 const app = express();
-console.log(process.env);
+// console.log(process.env);
 
 const route = express.Router();
-const port = process.env.PORT || 5000
+const port = process.env.PORT 
 
 app.use(cors());
 app.use(express.json())
@@ -29,19 +29,22 @@ app.listen(port, ()=>{
 })
 
 const pusher = new Pusher({
-    appId: process.env.PUSHER_APP_ID,
-    key: process.env.PUSHER_APP_KEY,
-    secret: process.env.PUSHER_APP_SECRET,
-    cluster: process.env.PUSHER_APP_CLUSTER,
-    useTLS: true,
+    appId: "1490500",
+    key: "28d41eb28c2337eb60b8",
+    secret: "11f09560309e53646fc6",
+    cluster: "eu",
+  });
+
+  pusher.trigger("my-channel", "my-event", {
+    message: "hello world"
   });
 //While the response is being sent through to the API, nodemailer will create an SMTP connection to the nodemailer server.
 const contactEmail =nodemailer.createTransport({
     service:"gmail",
-    
     auth:{
-    user:"process.env.USER",
-    pass:"process.env.PASS",
+    user:process.env.EMAIL_USER,
+    pass:process.env.EMAIL_PASS
+    
     },
 });
 
@@ -61,10 +64,10 @@ app.post("/contact", (req, res)=>{
     const message = req.body.message;
     const mail ={
         from: name,
-        to:"mingchi1992wong@gmail.com",
-        html:`<p>Name:${name}</p>
-              <p>Name:${email}</p>
-              <p>Name:${message}</p>`,
+        to:"drloveiscrazy@gmail.com",
+        html:`<p>${email}</p>
+              <p>${name}</p>
+              <p>${message}</p>`,
     };
     console.log(mail)
     //If mail is successfully sent a status will be shown in the console with an "ERROR" else it would display a message saying "Message sent".
@@ -77,41 +80,4 @@ app.post("/contact", (req, res)=>{
     });
 });
 
-// app.post("/", (req, res)=>{
-//     console.log(req.body)
-//     // const transporter = nodemailer.createTransport({
-//     //     service:"gmail",
-//     //     auth:{
-//     //         user:"",
-//     //         pass:""
-//     //     },
-//     // });
 
-//     // const mailOptions = {
-//     //     from: req.body.email,
-//     //     to: "mingchi1992@gmail.com",
-//     //     subject:`Message from ${req.body.email}: ${req.body.subject}`,
-//     //     text: req.body.message
-//     // }
-
-//     transporter.sendMail(mailOptions, (error, info)=>{
-//         if(error){
-//             console.log(error)
-//             res.send(error)
-//         }else{
-//             console.log("Email sent:" + info.response)
-//             res.send("success")
-//         }
-//     })
-
-// })
-
-
-
-// // contactEmail.verify((error)=>{
-// //     if(error){
-// //         console.log(error)
-// //     }else{
-// //         console.log("Ready to send")
-// //     }ˆ
-// // })
