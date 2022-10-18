@@ -29,10 +29,11 @@ app.listen(port, ()=>{
 })
 
 const pusher = new Pusher({
-    appId: "1490500",
-    key: "28d41eb28c2337eb60b8",
-    secret: "11f09560309e53646fc6",
-    cluster: "eu",
+    appId: process.env.PUSHER_APP_ID,
+      key: process.env.PUSHER_APP_KEY,
+      secret: process.env.PUSHER_APP_SECRET,
+      cluster: process.env.PUSHER_APP_CLUSTER,
+      useTLS: true,
   });
 
   pusher.trigger("my-channel", "my-event", {
