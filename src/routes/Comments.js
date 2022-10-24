@@ -37,7 +37,7 @@ const Comments = () => {
         <Card style={{ maxWidth: 430, padding: "0", margin: "0 auto" }}>
           <CardContent>
             <Typography  gutterBottom variant="h5">
-            <p>Feel free to make some comments!</p>  
+            <p>Feel free to make some comments!!!</p>  
           </Typography> 
             
             <form>
