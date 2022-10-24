@@ -33,9 +33,10 @@ const handleSubmit =async(e)=>{
 //Once users has submitted their detail the API will then respond to the request. 
 //result variable will then wait for a response from the API.
   let result = await response.json();
-  alert(result)
+  // alert(result)
 //console.log will then show us the whether the users info was passed onto the API.
   console.log(result)
+  alert("Message sent!!!")
 }
 
   return (

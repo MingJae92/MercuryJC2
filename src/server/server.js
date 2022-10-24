@@ -5,9 +5,9 @@ import Pusher from 'pusher'
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
-
-
 dotenv.config({path:'../../config/.env'})
+
+
 const app = express();
 const databaseURL = process.env.MONGO_URL
 
@@ -22,7 +22,7 @@ const connectDB= async()=>{
         console.log(err);
         process.exit(1);
       }
-
+      
 }
 
 const route = express.Router();
@@ -35,7 +35,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res)=>{
-    res.send("Welcome to my server guys!!!")
+    mongoose.find({}, (err, data)=>{
+        if(err) return res.status(500).send(err);
+        res.json(data)
+    })
+})
+
+app.post("/comment", (res, req)=>{
+    mongoose.insert(Object.assign({}, req.body), (err, newComment)=>{
+        if(err){
+            return res.status(500).send(err);
+        }
+        pusher.trigger("comment", "newComment", {
+            comment: newComment,
+        });
+        res.status(200).send("OK")
+    })
 })
 
 app.use("/v1", route);
