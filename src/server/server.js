@@ -7,7 +7,6 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 dotenv.config({path:'../../config/.env'})
 
-
 const app = express();
 const databaseURL = process.env.MONGO_URL
 
@@ -22,12 +21,26 @@ const connectDB= async()=>{
         console.log(err);
         process.exit(1);
       }
+      mongoose.connection.on('error', err => {
+        console.log(err);
+      });
+      
       
 }
 
 const route = express.Router();
 const port = process.env.PORT 
 connectDB()
+const schema = new mongoose.Schema({ firstname: 'string', lastname:'string', comment:'string' });
+const Comments = mongoose.model('Comments', schema);
+
+// Comments.create({ firstname: 'Legend', lastname:'Lee', comment:'Hello' }, function (err, small) {
+//     if (err) 
+//     console.log(err)
+//     // saved!
+//   });
+
+
 
 app.use(cors());
 app.use(express.json())
@@ -35,14 +48,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res)=>{
-    mongoose.find({}, (err, data)=>{
+    Comments.find({}, (err, data)=>{
         if(err) return res.status(500).send(err);
         res.json(data)
     })
 })
 
 app.post("/comment", (res, req)=>{
-    mongoose.insert(Object.assign({}, req.body), (err, newComment)=>{
+    Comments.create({ firstname: req.body.firstname, lastname:req.body.lastname, comment:req.body.comment }, function (err, newComment) {
+    
         if(err){
             return res.status(500).send(err);
         }
@@ -52,6 +66,8 @@ app.post("/comment", (res, req)=>{
         res.status(200).send("OK")
     })
 })
+
+
 
 app.use("/v1", route);
 
