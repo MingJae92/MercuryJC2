@@ -54,16 +54,18 @@ app.get("/", (req, res)=>{
     })
 })
 
-app.post("/comment", (res, req)=>{
+app.post("/comment", (req, res)=>{
+    console.log(JSON.stringify(req.body))
     Comments.create({ firstname: req.body.firstname, lastname:req.body.lastname, comment:req.body.comment }, function (err, newComment) {
-    
+        console.log(JSON.stringify(err))
+        console.log(JSON.stringify(newComment))
         if(err){
             return res.status(500).send(err);
         }
-        pusher.trigger("comment", "newComment", {
+        pusher.trigger("comments", "newComment", {
             comment: newComment,
-        });
-        res.status(200).send("OK")
+        }).then(res.status(200).send("OK"))
+        
     })
 })
 
@@ -83,9 +85,9 @@ const pusher = new Pusher({
       useTLS: true,
   });
 
-  pusher.trigger("my-channel", "my-event", {
-    message: "hello world"
-  });
+//   pusher.trigger("my-channel", "my-event", {
+//     message: "hello world"
+//   });
 //While the response is being sent through to the API, nodemailer will create an SMTP connection to the nodemailer server.
 const contactEmail =nodemailer.createTransport({
     service:"gmail",
