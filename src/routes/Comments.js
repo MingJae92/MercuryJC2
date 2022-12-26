@@ -1,4 +1,4 @@
-import { TextField, Button, Card, CardContent, Typography } from '@mui/material';
+import { TextField, Button, Card, CardContent, Typography, Paper, Divider } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { useEffect, useState } from 'react';
 import "./Comments.css"
@@ -56,9 +56,18 @@ const Comments = () => {
       }).catch(err => console.log(err))
   }, [])
   const userComments = comments.map(item=>
-   <div><p>{item.comment}</p>
-   <p>{item.firstname}</p>
-   <p>{item.lastname}</p></div>
+   <div>
+    <Paper style={{ padding: "40px 20px" }}>
+      <Grid container wrap="nowrap" spacing={2}>
+        <Grid justifyContent="left" item xs zeroMinWidth>
+          <p style={{ textAlign: "left" }}>{item.firstname}</p>
+          <p style={{ textAlign: "left" }}>{item.lastname}</p>
+          <p style={{ textAlign: "left" }}>{item.comment}</p>
+        </Grid>
+      </Grid>
+      <Divider variant="fullWidth" style={{ margin: "30px 0" }} />
+    </Paper>
+   </div>
 
   )
 
@@ -86,7 +95,7 @@ const Comments = () => {
                   <Button onClick={postComment} style={{ height: "5vh" }} variant="contained" color="primary" fullWidth>Submit</Button>
                 </Grid>
               </Grid>
-              <section>{userComments}</section>
+              <section><h1>Comments</h1>{userComments}</section>
             </form>
             
           </CardContent>
