@@ -7,6 +7,8 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Footer from './Footer';
 import ScrollToTop from './ScrollUpButton';
+// import axios from "axios"
+
 
 //Material ui was used for the layout to structure the webpage.
 //ArtWorkImages is mapped out and then item then uses the .description and .path property to display each image and title. 
@@ -20,6 +22,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const MyWork = () => {
+  // const imageGallery = axios.get(" https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/upload")
+  // console.log
   return (
     <div>
       <h1>My Art Work</h1>

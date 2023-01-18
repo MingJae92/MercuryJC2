@@ -29,7 +29,7 @@ const connectDB= async()=>{
 }
 
 const route = express.Router();
-const port = process.env.PORT 
+const port = process.env.APISERVERPORT 
 connectDB()
 const schema = new mongoose.Schema({ firstname: 'string', lastname:'string', comment:'string' });
 const Comments = mongoose.model('Comments', schema);
@@ -47,14 +47,14 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/", (req, res)=>{
+app.get("/comments", (req, res)=>{
     Comments.find({}, (err, data)=>{
         if(err) return res.status(500).send(err);
         res.json(data)
     })
 })
 
-app.post("/comment", (req, res)=>{
+app.post("/comments", (req, res)=>{
     console.log(JSON.stringify(req.body))
     Comments.create({ firstname: req.body.firstname, lastname:req.body.lastname, comment:req.body.comment }, function (err, newComment) {
         console.log(JSON.stringify(err))

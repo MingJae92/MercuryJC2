@@ -4,8 +4,7 @@ import { useEffect, useState } from 'react';
 import "./Comments.css"
 import axios from 'axios';
 import Pusher from "pusher-js"
-import dotenv from "dotenv"
-dotenv.config({path:'../../config/.env'})
+
 
 
 const Comments = () => {
@@ -26,7 +25,7 @@ const Comments = () => {
     };
     //Axios will use a post method to post users comments.
     //Axios is a http request for a Restful API
-    axios.post("http://localhost:7000/comment", data)
+    axios.post("http://localhost:5000/comments", data)
 
       .then(() => {
         setUserName("")
@@ -47,13 +46,14 @@ const Comments = () => {
     const channel = pusher.subscribe("comments");
     channel.bind("newComment", data => {
       setComments(arr=> [...arr, data.comment])
-      console.log(comments)
+      // console.log(comments)
     
     })
-
-      axios.get("http://localhost:7000",).then(({ data }) => {
+console.log("http://localhost:5000/comments")
+      axios.get("http://localhost:5000/comments").then(({ data }) => {
         setComments(data)
       }).catch(err => console.log(err))
+
   }, [])
   const userComments = comments.map(item=>
    <div>
