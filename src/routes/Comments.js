@@ -6,11 +6,11 @@ import axios from 'axios';
 import Pusher from "pusher-js"
 
 
-
 const Comments = () => {
   const [userName, setUserName] = useState("")
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState("")
+
 
   const postComment = (e) => {
     e.preventDefault();
@@ -19,13 +19,13 @@ const Comments = () => {
     //Users info stored in data object.
     const data = {
       firstname: userName,
-      lastname:"Lee",
+      // lastname:"Lee",
       comment: newComment,
       votes: 0
     };
     //Axios will use a post method to post users comments.
     //Axios is a http request for a Restful API
-    axios.post("http://localhost:5000/comments", data)
+    axios.post("http://localhost:7000/comments", data)
 
       .then(() => {
         setUserName("")
@@ -49,8 +49,8 @@ const Comments = () => {
       // console.log(comments)
     
     })
-console.log("http://localhost:5000/comments")
-      axios.get("http://localhost:5000/comments").then(({ data }) => {
+console.log("http://localhost:7000/comments")
+      axios.get("http://localhost:7000/comments").then(({ data }) => {
         setComments(data)
       }).catch(err => console.log(err))
 
@@ -61,7 +61,7 @@ console.log("http://localhost:5000/comments")
       <Grid container wrap="nowrap" spacing={2}>
         <Grid justifyContent="left" item xs zeroMinWidth>
           <p style={{ textAlign: "left" }}>{item.firstname}</p>
-          <p style={{ textAlign: "left" }}>{item.lastname}</p>
+          {/* <p style={{ textAlign: "left" }}>{item.lastname}</p> */}
           <p style={{ textAlign: "left" }}>{item.comment}</p>
         </Grid>
       </Grid>

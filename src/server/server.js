@@ -3,9 +3,29 @@ import cors from "cors"
 import nodemailer from "nodemailer"
 import Pusher from 'pusher'
 import bodyParser from "body-parser"
-import dotenv from "dotenv"
 import mongoose from "mongoose"
+import dotenv from "dotenv"
 dotenv.config({path:'../../config/.env'})
+
+import cloudinary from 'cloudinary'
+
+cloudinary.v2.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+cloudinary.v2.api.sub_folders("samples/ArtWorkImages").then((res)=>{
+    console.log(res)
+}).catch((err)=>{
+    console.log(err)
+});
+
+cloudinary.v2.api
+.resources(
+{ type: 'upload', max_results: 100, 
+  prefix: 'samples/ArtWorkImages' })
+.then(result=>console.log(result));
 
 const app = express();
 const databaseURL = process.env.MONGO_URL
@@ -30,8 +50,9 @@ const connectDB= async()=>{
 
 const route = express.Router();
 const port = process.env.APISERVERPORT 
+
 connectDB()
-const schema = new mongoose.Schema({ firstname: 'string', lastname:'string', comment:'string' });
+const schema = new mongoose.Schema({ firstname: 'string', comment:'string' });
 const Comments = mongoose.model('Comments', schema);
 
 // Comments.create({ firstname: 'Legend', lastname:'Lee', comment:'Hello' }, function (err, small) {
@@ -39,8 +60,6 @@ const Comments = mongoose.model('Comments', schema);
 //     console.log(err)
 //     // saved!
 //   });
-
-
 
 app.use(cors());
 app.use(express.json())
@@ -56,7 +75,7 @@ app.get("/comments", (req, res)=>{
 
 app.post("/comments", (req, res)=>{
     console.log(JSON.stringify(req.body))
-    Comments.create({ firstname: req.body.firstname, lastname:req.body.lastname, comment:req.body.comment }, function (err, newComment) {
+    Comments.create({ firstname: req.body.firstname, comment:req.body.comment }, function (err, newComment) {
         console.log(JSON.stringify(err))
         console.log(JSON.stringify(newComment))
         if(err){
@@ -68,8 +87,6 @@ app.post("/comments", (req, res)=>{
         
     })
 })
-
-
 
 app.use("/v1", route);
 
@@ -97,7 +114,6 @@ const contactEmail =nodemailer.createTransport({
     
     },
 });
-
 
 contactEmail.verify((error)=>{
     if(error){
@@ -129,5 +145,9 @@ app.post("/contact", (req, res)=>{
         }
     });
 });
+
+
+
+
 
 
