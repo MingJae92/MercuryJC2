@@ -30,17 +30,16 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const MyWork = () => {
 
-  const [myWork, setMyWork]= useState(null)
+  const [myWork, setMyWork]= useState([])
 
   useEffect(()=>{
-    axios.get(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/resources/image/upload?prefix=samples/ArtWorkImages&max_results=100`).then((res)=>{
-      const data = res.resources
-
-      setMyWork(data)
-      console.log(data)
+    axios.get("http://localhost:7000/My-Work-Collection").then((res)=>{
+      const imageDescription = res.data
+      setMyWork(imageDescription)
+      // console.log(res.data) 
 
     })
-  })
+  },[])
 
   return (
     <div>
@@ -48,10 +47,10 @@ const MyWork = () => {
      <div>
           <Box >
             <Grid container spacing={1}>
-              {ArtWorkImages.map(
+              {myWork.map(
                 (item)=>(
                   <Grid item xs={4}>
-                    <Item><h2>{item.description}</h2><img src={item.path}/></Item>
+                    <Item><img src={item.imageUrl}/></Item>
                     <Item></Item>
                   </Grid>
                   )

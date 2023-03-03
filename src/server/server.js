@@ -140,6 +140,14 @@ app.post("/comments", (req, res) => {
     })
 })
 
+app.get("/My-Work-Collection", (req, res)=>{
+    ArtWorkImages.find({}, (err, data)=>{
+        if(err) return res.status(500).send(err);
+        res.json(data)
+        console.log(data)
+    })
+})
+
 app.use("/v1", route);
 
 app.listen(port, () => {
