@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './MyWork.css'
-import ArtWorkImages from '../ArtWorkImages'
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -10,13 +9,7 @@ import ScrollToTop from './ScrollUpButton';
 import axios from "axios"
 // import dotenv from "dotenv"
 // dotenv.config({path:'../../config/.env'})
-
 // import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
-
-
-
-
-
 //Material ui was used for the layout to structure the webpage.
 //ArtWorkImages is mapped out and then item then uses the .description and .path property to display each image and title. 
 
