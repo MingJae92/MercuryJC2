@@ -7,7 +7,7 @@ import mongoose, { model } from "mongoose"
 import dotenv from "dotenv"
 dotenv.config({ path: '../../config/.env' })
 import cloudinary from 'cloudinary'
-import { Description } from "@mui/icons-material"
+
 
 cloudinary.v2.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -34,53 +34,6 @@ const ArtWorkImagesSchema = new mongoose.Schema(
 
 const ArtWorkImages = mongoose.model("ArtWorkImages", ArtWorkImagesSchema)
 
-const checkCloudinaryForImage = () => {
-    cloudinary.v2.api
-        .resources(
-            {
-                type: 'upload', max_results: 100,
-                prefix: 'samples/ArtWorkImages'
-            })
-        .then(result => {
-            console.log(result)
-            if (false) {
-                // next(err)
-            } else  {
-                
-                const newArtWorkImages = []
-                const resultArray = result.resources
-                for (let i = 0; i < resultArray.length; i++) {
-
-                    const newArtWorkImage = {
-                        id: resultArray[i].asset_id,
-                        description: resultArray[i].secure_url,
-                        imageUrl: resultArray[i].url,
-                        
-                    }
-                    newArtWorkImages.push(newArtWorkImage)
-                }
-                console.log("Writing image updates")
-                console.log(newArtWorkImages)
-                ArtWorkImages.bulkWrite(newArtWorkImages.map(doc => ({
-                    updateOne: {
-                        filter: {
-                            id: doc.id
-                        },
-                        update: doc,
-                        upsert: true
-                    }
-                }))).then((updateResponse) => {
-                    // console.log("Art work images updates: " + updateResponse.esources.length + " Count updated")
-                    console.log(updateResponse)
-                    // res.send("Art work images updated! Updated: \n" + JSON.stringify(updateResponse))
-                })
-            }
-            
-        });
-}
-
-
-
 const CommissionImagesSchema = new mongoose.Schema({
     id: {
         type: String,
@@ -99,53 +52,7 @@ const CommissionImagesSchema = new mongoose.Schema({
 
 const CommissionImages = mongoose.model("Commissionimages", CommissionImagesSchema)
 
-const checkCloudinaryForComissionsImages = () => {
-    cloudinary.v2.api
-        .resources(
-            {
-                type: 'upload', max_results: 100,
-                prefix: 'samples/ArtCommissionImages'
-            })
-        .then(result => {
-            console.log(result)
-            if (false) {
-                // next(err)
-            } else  {
-                
-                const newCommissionImages = []
-                const resultArray = result.resources
-                for (let i = 0; i < resultArray.length; i++) {
-
-                    const newCommissionImage = {
-                        id: resultArray[i].asset_id,
-                        description: resultArray[i].secure_url,
-                        imageUrl: resultArray[i].url,
-                        publicIDName:resultArray[i].public_id,
-                        
-                    }
-                    newCommissionImages.push(newCommissionImage)
-                }
-                console.log("Writing image updates")
-                console.log(newCommissionImages)
-                CommissionImages.bulkWrite(newCommissionImages.map(doc => ({
-                    updateOne: {
-                        filter: {
-                            id: doc.id
-                        },
-                        update: doc,
-                        upsert: true
-                    }
-                }))).then((updateResponse) => {
-                    // console.log("Art work images updates: " + updateResponse.esources.length + " Count updated")
-                    console.log(updateResponse)
-                    // res.send("Art work images updated! Updated: \n" + JSON.stringify(updateResponse))
-                })
-            }
-            
-        });
-}
-
-const ShopItemBagSchema = new mongoose.Schema(
+const ShopItemBagCollectionsSchema = new mongoose.Schema(
     {
         id: {
             type: String,
@@ -163,53 +70,7 @@ const ShopItemBagSchema = new mongoose.Schema(
 
 )
 
-const ShopItemBags = mongoose.model("ShopItemBags", ShopItemBagSchema)
-
-const checkCloudinaryForShopItemBag = () => {
-    cloudinary.v2.api
-        .resources(
-            {
-                type: 'upload', max_results: 100,
-                prefix: 'samples/ShopItemBag'
-            })
-        .then(result => {
-            console.log(result)
-            if (false) {
-                // next(err)
-            } else  {
-                
-                const newShopItemBags = []
-                const resultArray = result.resources
-                for (let i = 0; i < resultArray.length; i++) {
-
-                    const newShopItemBag = {
-                        id: resultArray[i].asset_id,
-                        description: resultArray[i].secure_url,
-                        imageUrl: resultArray[i].url,
-                        publicIDName:resultArray[i].public_id,
-                        
-                    }
-                    newShopItemBags.push(newShopItemBag)
-                }
-                console.log("Writing image updates")
-                console.log(newShopItemBags)
-                ShopItemBags.bulkWrite(newShopItemBags.map(doc => ({
-                    updateOne: {
-                        filter: {
-                            id: doc.id
-                        },
-                        update: doc,
-                        upsert: true
-                    }
-                }))).then((updateResponse) => {
-                    // console.log("Art work images updates: " + updateResponse.esources.length + " Count updated")
-                    console.log(updateResponse)
-                    // res.send("Art work images updated! Updated: \n" + JSON.stringify(updateResponse))
-                })
-            }
-            
-        });
-}
+const ShopItemBagCollections = mongoose.model("ShopItemBagCollections", ShopItemBagCollectionsSchema)
 
 const ShopItemBagPreviewSchema = new mongoose.Schema(
     {
@@ -231,35 +92,35 @@ const ShopItemBagPreviewSchema = new mongoose.Schema(
 
 const ShopItemBagPreviews = mongoose.model("ShopItemBagPreviews", ShopItemBagPreviewSchema)
 
-const checkCloudinaryForShopItemBagPreview = () => {
+const queryInsertdataIntoDB = (queryPrefix, model) => {
     cloudinary.v2.api
         .resources(
             {
                 type: 'upload', max_results: 100,
-                prefix: 'samples/ShopItembag/ShopItemBagPreview'
+                prefix: queryPrefix
             })
         .then(result => {
-            console.log(result)
+            // console.log(result)
             if (false) {
                 // next(err)
             } else  {
-                
-                const newShopItemBagPreviews = []
+                console.log("processing shop item bag collection for" + queryPrefix)
+                const newShopItemBagCollections = []
                 const resultArray = result.resources
                 for (let i = 0; i < resultArray.length; i++) {
 
-                    const newShopItemBagPreview = {
+                    const newShopItemBagCollection = {
                         id: resultArray[i].asset_id,
                         description: resultArray[i].secure_url,
                         imageUrl: resultArray[i].url,
-                        publicIDName:resultArray[i].public_id,
+                        
                         
                     }
-                    newShopItemBagPreviews.push(newShopItemBagPreview)
+                    newShopItemBagCollections.push(newShopItemBagCollection)
                 }
-                console.log("Writing image updates")
-                console.log(newShopItemBagPreviews)
-                ShopItemBagPreviews.bulkWrite(newShopItemBagPreviews.map(doc => ({
+                console.log("Writing image updates for " + queryPrefix)
+                // console.log(newShopItemBagCollections)
+                model.bulkWrite(newShopItemBagCollections.map(doc => ({
                     updateOne: {
                         filter: {
                             id: doc.id
@@ -269,6 +130,7 @@ const checkCloudinaryForShopItemBagPreview = () => {
                     }
                 }))).then((updateResponse) => {
                     // console.log("Art work images updates: " + updateResponse.esources.length + " Count updated")
+                    console.log(queryPrefix + " : " )
                     console.log(updateResponse)
                     // res.send("Art work images updated! Updated: \n" + JSON.stringify(updateResponse))
                 })
@@ -276,6 +138,12 @@ const checkCloudinaryForShopItemBagPreview = () => {
             
         });
 }
+
+
+
+
+
+
 
 
 
@@ -299,10 +167,14 @@ const connectDB = async () => {
     mongoose.connection.on('error', err => {
         console.log(err);
     });
-    checkCloudinaryForShopItemBagPreview()
-    checkCloudinaryForShopItemBag()
-    checkCloudinaryForComissionsImages();
-    checkCloudinaryForImage();
+
+    queryInsertdataIntoDB("samples/ShopItemBag/ShopItemBagCollection", ShopItemBagCollections)
+    queryInsertdataIntoDB("samples/ShopItembag/ShopItemBagPreview", ShopItemBagPreviews)
+    queryInsertdataIntoDB("samples/ArtCommissionImages", CommissionImages)
+    queryInsertdataIntoDB("samples/ArtWorkImages", ArtWorkImages)
+    // checkCloudinaryForShopItemBagPreview();
+    // checkCloudinaryForComissionsImages();
+    // checkCloudinaryForImage();
 
 }
 
@@ -419,9 +291,4 @@ app.post("/contact", (req, res) => {
         }
     });
 });
-
-
-
-
-
 
