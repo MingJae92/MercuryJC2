@@ -12,17 +12,17 @@ const handleSubmit =async(e)=>{
   e.preventDefault();
   setStatus("Send")
 // firstname, lastname, email and message values are assigned with e.target.elements.
-  const {firstname, lastname, email, message} = e.target.elements;
+  const {name, email, message} = e.target.elements;
 //details object will store all the values from the form once the user has filled out the form. 
   let details = {
-    name:firstname.value+lastname.value,
+    name:name.value,
     email:email.value,
     message:message.value,
   }
 
   console.log(details)
 //response will then fetch the data from the API which is http://localhost:5000/contact. 
-  let response = await fetch("http://localhost:5000/contact", {
+  let response = await fetch("http://localhost:7000/contact", {
     method:"POST",
     headers:{
       "Content-Type": "application/json",
@@ -57,11 +57,7 @@ const handleSubmit =async(e)=>{
             <form onSubmit={handleSubmit} method="POST">
               <Grid container spacing={1}>
                 <Grid xs={12} sm={6} item>
-                  <TextField placeholder="Enter first name" name="firstname" variant="outlined" fullWidth required />
-
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField placeholder="Enter last name" name="lastname" variant="outlined"  fullWidth required />
+                  <TextField placeholder="Enter your name" name="name" variant="outlined"  fullWidth required />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField type="email" placeholder="Enter email" name="email" variant="outlined"  fullWidth required />

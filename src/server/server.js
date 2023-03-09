@@ -8,7 +8,6 @@ import dotenv from "dotenv"
 dotenv.config({ path: '../../config/.env' })
 import cloudinary from 'cloudinary'
 
-
 cloudinary.v2.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
@@ -47,7 +46,7 @@ const CommissionImagesSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-       
+
 })
 
 const CommissionImages = mongoose.model("Commissionimages", CommissionImagesSchema)
@@ -103,7 +102,7 @@ const queryInsertdataIntoDB = (queryPrefix, model) => {
             // console.log(result)
             if (false) {
                 // next(err)
-            } else  {
+            } else {
                 console.log("processing shop item bag collection for" + queryPrefix)
                 const newShopItemBagCollections = []
                 const resultArray = result.resources
@@ -113,8 +112,8 @@ const queryInsertdataIntoDB = (queryPrefix, model) => {
                         id: resultArray[i].asset_id,
                         description: resultArray[i].secure_url,
                         imageUrl: resultArray[i].url,
-                        
-                        
+
+
                     }
                     newShopItemBagCollections.push(newShopItemBagCollection)
                 }
@@ -130,25 +129,14 @@ const queryInsertdataIntoDB = (queryPrefix, model) => {
                     }
                 }))).then((updateResponse) => {
                     // console.log("Art work images updates: " + updateResponse.esources.length + " Count updated")
-                    console.log(queryPrefix + " : " )
+                    console.log(queryPrefix + " : ")
                     console.log(updateResponse)
                     // res.send("Art work images updated! Updated: \n" + JSON.stringify(updateResponse))
                 })
             }
-            
+
         });
 }
-
-
-
-
-
-
-
-
-
-
-
 
 const app = express();
 const databaseURL = process.env.MONGO_URL
@@ -218,21 +206,32 @@ app.post("/comments", (req, res) => {
     })
 })
 
-app.get("/My-Work-Collection", (req, res)=>{
-    ArtWorkImages.find({}, (err, data)=>{
-        if(err) return res.status(500).send(err);
+app.get("/My-Work-Collection", (req, res) => {
+    ArtWorkImages.find({}, (err, data) => {
+        if (err) return res.status(500).send(err);
         res.json(data)
         console.log(data)
     })
 })
 
-app.get("/commissions-images", (req, res)=>{
-    CommissionImages.find({}, (err, data)=>{
-        if(err) return res.status(500).send(err);
+app.get("/commissions-images", (req, res) => {
+    CommissionImages.find({}, (err, data) => {
+        if (err) return res.status(500).send(err);
         res.json(data)
         console.log(data)
     })
 })
+
+app.get("/shop-item-bag-preview-images", (req, res) => {
+    ShopItemBagPreviews.find({}, (err, data) => {
+            if (err) return res.status(500).send(err);
+            res.json(data)
+            console.log(data)
+        }
+    )
+})
+
+
 
 app.use("/v1", route);
 
@@ -248,9 +247,33 @@ const pusher = new Pusher({
     useTLS: true,
 });
 
-//   pusher.trigger("my-channel", "my-event", {
-//     message: "hello world"
-//   });
+const emailContactSchema = new mongoose.Schema(
+    {
+        
+        name: {
+            type: String,
+            
+        },
+        email: {
+            type: String,
+            
+        },
+        number: {
+            type: Number,
+            
+        },
+        message: {
+            type: String,
+            
+        }
+    }
+)
+
+const emailStorage = mongoose.model("Emailmessages",emailContactSchema )
+
+  pusher.trigger("my-channel", "my-event", {
+    message: "hello world"
+  });
 //While the response is being sent through to the API, nodemailer will create an SMTP connection to the nodemailer server.
 const contactEmail = nodemailer.createTransport({
     service: "gmail",
@@ -273,12 +296,20 @@ contactEmail.verify((error) => {
 app.post("/contact", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
+    const number = req.body.number;
     const message = req.body.message;
+    emailStorage.create({name:req.body.name, email:req.body.email, number:req.body.number, message:req.body.message}, (err)=>{
+        console.log(JSON.stringify(err))
+        if (err) {
+            return res.status(500).send(err);
+        }
+    })
     const mail = {
         from: name,
         to: "drloveiscrazy@gmail.com",
         html: `<p>${email}</p>
               <p>${name}</p>
+              <p>${number}</p>
               <p>${message}</p>`,
     };
     console.log(mail)

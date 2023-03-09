@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Shop.css'
 import  ShopItems from "./ShopItems"
 import { styled } from '@mui/material/styles';
@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import {Link} from "react-router-dom"
 import Footer from './Footer';
 import ScrollToTop from './ScrollUpButton';
+import axios from 'axios';
 
 //ShopItems component stores all the images for the shop webpage.
 //ShopItems component is then applied with the map method to display the shop items.
@@ -23,7 +24,15 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const Shop = () => {
+const [shop, setShop] = useState([])
 
+useEffect(()=>{
+  axios.get("http://localhost:7000/shop-item-bag-preview-images").then((res)=>{
+    const shopItemBagPreviewImagesData = res.data;
+    console.log(shopItemBagPreviewImagesData)
+    setShop(shopItemBagPreviewImagesData)
+  })
+},[])
   return (
     <div>
        <h1>Shop, Etsy-Previews</h1>
@@ -36,6 +45,7 @@ const Shop = () => {
                     <Item >
                       <h4>{item.name}</h4>
                       <Link to={`/Shop/${item.path}`}><img src={item.img}/></Link>
+                      
                     </Item>
                    
                   </Grid>
@@ -43,6 +53,7 @@ const Shop = () => {
               )}
             </Grid>
       </Box>
+     
     <ScrollToTop/>
     <Footer/>
     </div>

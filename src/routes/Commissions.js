@@ -28,7 +28,7 @@ const Commissions = () => {
     <div className='illustrations'>
       <h1>Commissions</h1>
       <p>These are just previews only of my commissions.</p>
-      <h1>ILLUSTRATION(FULL-COLOUR)</h1>
+      {/* <h1>ILLUSTRATION(FULL-COLOUR)</h1>
         <h5>BUST</h5>
           <img src={Pardofelis}/>
           <img src={YaeMiko}/>
@@ -50,8 +50,8 @@ const Commissions = () => {
           <img src={Fullbody}/>
       <h1>EMOTES</h1>
         <h5>STREAM EMOTES</h5>
-        <img src={Emotes}/>
-      {commissionsImages.map((item)=>(<img src={item.imgUrl} />))}
+        <img src={Emotes}/> */}
+      {commissionsImages.map((item)=>(<img src={item.imageUrl} />))}
     <ScrollToTop/>
     <Footer/>
     </div>
