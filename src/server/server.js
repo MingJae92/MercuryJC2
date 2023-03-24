@@ -13,6 +13,587 @@ cloudinary.v2.config({
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
+
+// const shopItemsPreviews = [
+//     {
+//         description: "Animal Crossing",
+//         imageUrl:"http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157753/samples/ShopItemBag/ShopItemBagPreview/ac_bu3kqf.jpg",
+//         image_path:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1678157753/samples/ShopItemBag/ShopItemBagPreview/ac_bu3kqf.jpg"
+//     },
+
+//     {
+//         description: "Butter Cat Stickers",
+//         imageUrl:"http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157777/samples/ShopItemBag/ShopItemBagPreview/bcs_rlm5cg.jpg",
+//         image_path:"/shop/http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157777/samples/ShopItemBag/ShopItemBagPreview/bcs_rlm5cg.jpg"
+//     },
+//     {
+//         description: "BTS Permission To Dance Metallic Sticker",
+//         imageUrl:"http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157777/samples/ShopItemBag/ShopItemBagPreview/bts_iaf7dh.jpg",
+//         image_path:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1678157777/samples/ShopItemBag/ShopItemBagPreview/bts_iaf7dh.jpg"
+//     },
+//     {
+//         description: "Candy Paw Subscriber Badges",
+//         imageUrl:"http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157824/samples/ShopItemBag/ShopItemBagPreview/cpsb_v1ff0v.jpg",
+//         image_path:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1678157824/samples/ShopItemBag/ShopItemBagPreview/cpsb_v1ff0v.jpg",
+
+//     },
+//     {
+//         description: "Cat Succulent Planter Subscriber-Badges-A",
+//         imageUrl:"http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157823/samples/ShopItemBag/ShopItemBagPreview/cspsba1_eajxwf.jpg",
+//         image_path1:"shop/res.cloudinary.com/dzspnmwcq/image/upload/v1678157823/samples/ShopItemBag/ShopItemBagPreview/cspsba1_eajxwf.jpg",
+//         image_path2:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884427/samples/ShopItemBag/ShopItemBagCollection/cspsba2_flramd.jpg"
+//     },
+//     {
+//         description: "Cat Succulent Planter Subscriber Badges B",
+//         imageUrl:"http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157878/samples/ShopItemBag/ShopItemBagPreview/cspsbb1_ktm0el.jpg",
+//         image_path3:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1678157878/samples/ShopItemBag/ShopItemBagPreview/cspsbb1_ktm0el.jpg",
+//         image_path4:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884426/samples/ShopItemBag/ShopItemBagCollection/cspsbb2_sovwzm.jpg"
+//     },
+//     {
+//         description: "Drunk-Dazed Holographic Vinyl Sticker",
+//         imageUrl:"http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157903/samples/ShopItemBag/ShopItemBagPreview/ddhvs1_co7as1.jpg",
+//         image_path5:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1678157903/samples/ShopItemBag/ShopItemBagPreview/ddhvs1_co7as1.jpg",
+//         image_path6:"/shop/https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884424/samples/ShopItemBag/ShopItemBagCollection/ddhvs2_yj38ji.jpg"
+//     },
+//     {
+//         description: "Genshin Impact Music Clear Acrylic Charm - CHILDE TARTAGLIA",
+//         imageUrl:"http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157997/samples/ShopItemBag/ShopItemBagPreview/gic1_ss1nvl.jpg",
+//         image_path7:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1678157997/samples/ShopItemBag/ShopItemBagPreview/gic1_ss1nvl.jpg",
+//         image_path8:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884425/samples/ShopItemBag/ShopItemBagCollection/gic1_ckojdb.jpg"
+//     },
+//     {
+//         description:"Genshin Impact Character Vinyl Stickers",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884424/samples/ShopItemBag/ShopItemBagCollection/gicvs1_tir60e.jpg",
+//         image_path9:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884424/samples/ShopItemBag/ShopItemBagCollection/gicvs1_tir60e.jpg",
+//         image_path10:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884426/samples/ShopItemBag/ShopItemBagCollection/gicvs2_s9wztf.jpg",
+//         image_path11:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884423/samples/ShopItemBag/ShopItemBagCollection/gicvs3_rrjpth.jpg"
+//     },
+//     {
+//         description:"Genshin Impact Music Clear Acrylic Charm - EULA",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gie1_hvp4j2.jpg",
+//         image_path12:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gie1_hvp4j2.jpg",
+//         image_path13:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884423/samples/ShopItemBag/ShopItemBagCollection/gie2_sgeccf.jpg"
+//     },
+//     {
+//         description:"Genshin Impact Elemental Subscriber Badges",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884421/samples/ShopItemBag/ShopItemBagCollection/giesb_qdcqlr.jpg",
+//         image_path:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884421/samples/ShopItemBag/ShopItemBagCollection/giesb_qdcqlr.jpg"
+//     },
+//     {
+//         description:"Genshin-Impact-Music-Clear-Acrylic-Charm-GANYU",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gig1_gm6u0t.jpg",
+//         image_path14:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gig1_gm6u0t.jpg",
+//         image_path15:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gig2_ozf4ls.jpg",
+//         image_path16:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884419/samples/ShopItemBag/ShopItemBagCollection/gig3_gymq0t.jpg",
+//         image_path17:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884420/samples/ShopItemBag/ShopItemBagCollection/gig4_lpk9ae.jpg"
+//     },
+//     {
+//         description:"Genshin-Impact-Music-Clear-Acrylic-Charm-HUTAO",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884420/samples/ShopItemBag/ShopItemBagCollection/gih1_a8nhts.jpg",
+//         image_path18:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884420/samples/ShopItemBag/ShopItemBagCollection/gih1_a8nhts.jpg",
+//         image_path19:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884421/samples/ShopItemBag/ShopItemBagCollection/gih2_tl2rgq.jpg"
+//     },
+//     {
+//         description:"Genshin-Impact-Music-Clear-Acrylic-Charm-JEAN",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884419/samples/ShopItemBag/ShopItemBagCollection/gij1_myuzc4.jpg",
+//         image_path20:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884419/samples/ShopItemBag/ShopItemBagCollection/gij1_myuzc4.jpg",
+//         image_path21:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884419/samples/ShopItemBag/ShopItemBagCollection/gij2_ckftyf.jpg"
+//     },
+//     {
+//         description:"Genshin-Impact-Music-Clear-Acrylic-Charm-KLEE",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884417/samples/ShopItemBag/ShopItemBagCollection/gik1_ccc2ax.jpg",
+//         image_path22:"shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884417/samples/ShopItemBag/ShopItemBagCollection/gik1_ccc2ax.jpg",
+//         image_path23:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884417/samples/ShopItemBag/ShopItemBagCollection/gik2_qqp1lx.jpg",
+//         image_path24:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884417/samples/ShopItemBag/ShopItemBagCollection/gik3_buchzj.jpg"
+//     },
+//     {
+//         description:"Genshin-Impact-Music-Clear-Acrylic-Charm-KAMISATO-AYAKA",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikam1_xpnjxz.jpg",
+//         image_path25:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikam1_xpnjxz.jpg",
+//         image_path26:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikam2_kxzjgm.jpg"
+//     },
+//     {
+//         description:"Genshin Impact Music Clear Acrylic Charm - KAZUHA",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikaz1_lxf9wg.jpg",
+//         image_path27:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikaz1_lxf9wg.jpg",
+//         image_path28:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884415/samples/ShopItemBag/ShopItemBagCollection/gikaz2_svh58p.jpg"
+//     },
+//     {
+//         description:"Genshin-Impact-Music-Clear-Acrylic-Charm-MONA",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884414/samples/ShopItemBag/ShopItemBagCollection/gim1_dbmtpg.jpg",
+//         image_path29:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884414/samples/ShopItemBag/ShopItemBagCollection/gim1_dbmtpg.jpg",
+//         image_path30:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884412/samples/ShopItemBag/ShopItemBagCollection/gim2_slhyhj.jpg"
+//     },
+//     {
+//         description:"Genshin-Impact-Music-Clear-Acrylic-Charm-QIQI",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giq1_javqlo.jpg",
+//         image_path31:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giq1_javqlo.jpg",
+//         image_path32:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giq2_pfympx.jpg",
+//         image_path33:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884414/samples/ShopItemBag/ShopItemBagCollection/giq3_csioh9.jpg"
+//     },
+//     {
+//         description:"A5-Genshin-Impact-Weekly-Planner",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giwp_tpmmon.jpg",
+//         image_path:"shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giwp_tpmmon.jpg"
+//     },
+//     {
+//         description:"Genshin-Impact-Music-Clear-Acrylic-Charm-YOIMIYA",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884410/samples/ShopItemBag/ShopItemBagCollection/giy1_e0nf4k.jpg",
+//         image_path34:"shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884410/samples/ShopItemBag/ShopItemBagCollection/giy1_e0nf4k.jpg",
+//         image_path35:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884410/samples/ShopItemBag/ShopItemBagCollection/giy2_gorhr2.jpg"
+//     },
+//     {
+//         description:"Genshin-Impact-Music-Clear-Acrylic-Charm-ZHONGLI",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884409/samples/ShopItemBag/ShopItemBagCollection/giz1_rlnkhm.jpg",
+//         image_path36:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884409/samples/ShopItemBag/ShopItemBagCollection/giz1_rlnkhm.jpg",
+//         image_path37:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884410/samples/ShopItemBag/ShopItemBagCollection/giz2_ljrqov.jpg"
+//     },
+//     {
+//         description:"Jelly-Neko-Subscriber-Badges",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884408/samples/ShopItemBag/ShopItemBagCollection/jnsb_yftgpu.jpg",
+//         image_path:"shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884408/samples/ShopItemBag/ShopItemBagCollection/jnsb_yftgpu.jpg"
+//     },
+//     {
+//         description:"K/DA-Inspired-Stream",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884405/samples/ShopItemBag/ShopItemBagCollection/kda1_h4bfeo.jpg",
+//         image_path38:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884405/samples/ShopItemBag/ShopItemBagCollection/kda1_h4bfeo.jpg",
+//         image_path39:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884409/samples/ShopItemBag/ShopItemBagCollection/kda2_ht0lpc.jpg",
+//         image_path40:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884406/samples/ShopItemBag/ShopItemBagCollection/kda3_jtpz76.jpg",
+//         image_path41:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/kda4_kc8wkb.jpg"
+//     },
+//     {
+//         description:"LIMITED-ADD-ON-Cat-Succulent-Planter-Subscriber-Badge",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/lacspsb_eugx3d.jpg",
+//         image_path:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/lacspsb_eugx3d.jpg"
+//     },
+//     {
+//         description:"Moonboat-Adventure-Holographic-Vinyl-Sticker",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884402/samples/ShopItemBag/ShopItemBagCollection/mahvs1_aw62w2.jpg",
+//         image_path42:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884402/samples/ShopItemBag/ShopItemBagCollection/mahvs1_aw62w2.jpg",
+//         image_path43:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/mahvs2_pthn6q.jpg"
+//     },
+//     {
+//         description:"Milk-Carton-Subscriber-Badges",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/mcsb_ntbbuo.jpg",
+//         image_path:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/mcsb_ntbbuo.jpg"
+//     },
+//     {
+//         description:"Magic-Girl-Subscriber-Badges",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/mgsb_qw8c1b.jpg",
+//         image_path:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/mgsb_qw8c1b.jpg"
+//     },
+//     {
+//         description:"Sakura-Blossom-Subscriber-Badges",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/sbsb1_yrqkzo.jpg",
+//         image_path44:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/sbsb1_yrqkzo.jpg",
+//         image_path45:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/sbsb2_hsl089.jpg"
+//     },
+//     {
+//         description:"Sakura-Blossom-Stream-Package-A",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884408/samples/ShopItemBag/ShopItemBagCollection/sbspa_shqqpt.jpg",
+//         image_path:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884408/samples/ShopItemBag/ShopItemBagCollection/sbspa_shqqpt.jpg"
+//     },
+//     {
+//         description:"Sakura-Blossom-Stream-Package-B",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884407/samples/ShopItemBag/ShopItemBagCollection/sbspb1_iqrf1x.jpg",
+//         image_path46:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884407/samples/ShopItemBag/ShopItemBagCollection/sbspb1_iqrf1x.jpg",
+//         image_path47:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884408/samples/ShopItemBag/ShopItemBagCollection/sbspb2_jzbyoc.jpg",
+//         image_path48:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/sbspb3_aylqkv.jpg"
+//     },
+//     {
+//         description:"Strawberry-Shibe-Subscriber-Badges",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/sssb1_yvt1t6.jpg",
+//         image_path49:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/sssb1_yvt1t6.jpg",
+//         image_path50:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884403/samples/ShopItemBag/ShopItemBagCollection/sssb2_lfy45a.jpg"
+//     },
+//     {
+//         description:"Usagi-Pastel-Moon-Subscriber-Badges",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884403/samples/ShopItemBag/ShopItemBagCollection/upmsb1_et4exa.jpg",
+//         image_path51:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884403/samples/ShopItemBag/ShopItemBagCollection/upmsb1_et4exa.jpg",
+//         image_path52:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884402/samples/ShopItemBag/ShopItemBagCollection/upmsb2_elg0ij.jpg"
+//     },
+//     {
+//         description:"Vitasoy Neko Matte Vinyl Stickers",
+//         imageUrl:"https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/vnmvs1_c87daa.jpg",
+//         image_path53:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/vnmvs1_c87daa.jpg",
+//         image_path54:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884398/samples/ShopItemBag/ShopItemBagCollection/vnmvs2_jui8gh.jpg",
+//         image_path55:"/shpo/res.cloudinary.com/dzspnmwcq/image/upload/v1672884402/samples/ShopItemBag/ShopItemBagCollection/vnmvs3_aqdesh.jpg",
+//         image_path56:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884400/samples/ShopItemBag/ShopItemBagCollection/vnmvs4_yy3pcv.jpg",
+//         image_path57:"/shop/res.cloudinary.com/dzspnmwcq/image/upload/v1672884406/samples/ShopItemBag/ShopItemBagCollection/vnmvs5_iwefcx.jpg"
+//     }
+
+
+// ]
+
+// const shopItemsPreviewLinks = new mongoose.Schema(
+//     {
+//         description:{
+//             type: String,
+//             required: true
+//         },
+//         imageUrl:{
+//             type:String,
+//             required: true
+//         },
+//         image_path:{
+//             type:String,
+//             required: true
+//         }
+//     }
+
+// )
+
+const shopItemsToInsert = [
+    {
+        description:"Animal Crossing",
+        shop_item_url_path:"Animal-Crossing",
+        image_preview: ["http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157753/samples/ShopItemBag/ShopItemBagPreview/ac_bu3kqf.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157753/samples/ShopItemBag/ShopItemBagPreview/ac_bu3kqf.jpg"]
+        
+    },
+    {
+        description:"Butter Cat Stickers",
+        shop_item_url_path:"Butter-Cat-Stickers",
+        image_preview: ["http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157777/samples/ShopItemBag/ShopItemBagPreview/bcs_rlm5cg.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157777/samples/ShopItemBag/ShopItemBagPreview/bcs_rlm5cg.jpg"]
+        
+    },
+    {
+        description:"BTS Permission To Dance Metallic Sticker",
+        shop_item_url_path:"BTS-Permission-To-Dance-Metallic-Sticker",
+        image_preview: ["http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157777/samples/ShopItemBag/ShopItemBagPreview/bts_iaf7dh.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157777/samples/ShopItemBag/ShopItemBagPreview/bts_iaf7dh.jpg"]
+        
+
+    },
+    {
+        description:"Candy Paw Subscriber Badges",
+        shop_item_url_path:"Candy-Paw-Subscriber-Badges",
+        image_preview: ["http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157824/samples/ShopItemBag/ShopItemBagPreview/cpsb_v1ff0v.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157824/samples/ShopItemBag/ShopItemBagPreview/cpsb_v1ff0v.jpg"]
+        
+    },
+    {
+        description:"Cat Succulent Planter Subscriber-Badges-A",
+        shop_item_url_path:"Cat-Succulent-Planter-Subscriber-Badges-A",
+        image_preview: ["http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157823/samples/ShopItemBag/ShopItemBagPreview/cspsba1_eajxwf.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157823/samples/ShopItemBag/ShopItemBagPreview/cspsba1_eajxwf.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884427/samples/ShopItemBag/ShopItemBagCollection/cspsba2_flramd.jpg"]
+        
+    },
+    {
+        description:"Cat Succulent Planter Subscriber-Badges-B",
+        shop_item_url_path:"Cat-Succulent-Planter-Subscriber-Badges-A",
+        image_preview: ["http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157878/samples/ShopItemBag/ShopItemBagPreview/cspsbb1_ktm0el.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157878/samples/ShopItemBag/ShopItemBagPreview/cspsbb1_ktm0el.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884426/samples/ShopItemBag/ShopItemBagCollection/cspsbb2_sovwzm.jpg"]
+        
+    },
+    {
+        description: "Drunk-Dazed Holographic Vinyl Sticker",
+        shop_item_url_path:"Drunk-Dazed-Holographic-Vinyl-Sticker",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157903/samples/ShopItemBag/ShopItemBagPreview/ddhvs1_co7as1.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157903/samples/ShopItemBag/ShopItemBagPreview/ddhvs1_co7as1.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/mahvs2_pthn6q.jpg"]
+        
+    },
+    {
+        description: "Genshin Impact Music Clear Acrylic Charm - CHILDE TARTAGLIA",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-CHILDE TARTAGLIA",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157997/samples/ShopItemBag/ShopItemBagPreview/gic1_ss1nvl.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157997/samples/ShopItemBag/ShopItemBagPreview/gic1_ss1nvl.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884425/samples/ShopItemBag/ShopItemBagCollection/gic1_ckojdb.jpg"]
+        
+    },
+    {
+        description: "Genshin Impact Character Vinyl Stickers",
+        shop_item_url_path:"Genshin-Impact-Character-Vinyl-Stickers",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884424/samples/ShopItemBag/ShopItemBagCollection/gicvs1_tir60e.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884424/samples/ShopItemBag/ShopItemBagCollection/gicvs1_tir60e.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884426/samples/ShopItemBag/ShopItemBagCollection/gicvs2_s9wztf.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884423/samples/ShopItemBag/ShopItemBagCollection/gicvs3_rrjpth.jpg"]
+        
+    },
+    {
+        description: "Genshin Impact Music Clear Acrylic Charm - EULA",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-EULA",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gie1_hvp4j2.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gie1_hvp4j2.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884423/samples/ShopItemBag/ShopItemBagCollection/gie2_sgeccf.jpg"]
+        
+    },
+    {
+        description: "Genshin Impact Elemental Subscriber Badges",
+        shop_item_url_path:"Genshin-Impact-Elemental-Subscriber-Badges",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884421/samples/ShopItemBag/ShopItemBagCollection/giesb_qdcqlr.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884421/samples/ShopItemBag/ShopItemBagCollection/giesb_qdcqlr.jpg"]
+        
+    },
+    {
+        description: "Genshin-Impact-Music-Clear-Acrylic-Charm-GANYU",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-GANYU",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gig1_gm6u0t.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gig1_gm6u0t.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884422/samples/ShopItemBag/ShopItemBagCollection/gig2_ozf4ls.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884419/samples/ShopItemBag/ShopItemBagCollection/gig3_gymq0t.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884420/samples/ShopItemBag/ShopItemBagCollection/gig4_lpk9ae.jpg"
+        ]
+    },
+    {
+        description: "Genshin-Impact-Music-Clear-Acrylic-Charm-HUTAO",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-HUTAO",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884420/samples/ShopItemBag/ShopItemBagCollection/gih1_a8nhts.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884420/samples/ShopItemBag/ShopItemBagCollection/gih1_a8nhts.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884421/samples/ShopItemBag/ShopItemBagCollection/gih2_tl2rgq.jpg"]
+        
+    },
+    {
+        description: "Genshin-Impact-Music-Clear-Acrylic-Charm-JEAN",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-JEAN",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884419/samples/ShopItemBag/ShopItemBagCollection/gij1_myuzc4.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884419/samples/ShopItemBag/ShopItemBagCollection/gij1_myuzc4.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884419/samples/ShopItemBag/ShopItemBagCollection/gij2_ckftyf.jpg"]
+        
+    },
+    {
+        description: "Genshin-Impact-Music-Clear-Acrylic-Charm-KLEE",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-KLEE",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884417/samples/ShopItemBag/ShopItemBagCollection/gik1_ccc2ax.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884417/samples/ShopItemBag/ShopItemBagCollection/gik1_ccc2ax.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884417/samples/ShopItemBag/ShopItemBagCollection/gik2_qqp1lx.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884417/samples/ShopItemBag/ShopItemBagCollection/gik3_buchzj.jpg"]
+        
+    },
+    {
+        description: "Genshin-Impact-Music-Clear-Acrylic-Charm-KAMISATO-AYAKA",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-KAMISATO-AYAKA",
+        image_preview:["https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikam1_xpnjxz.jpg"],
+        images_main:[
+            "res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikam1_xpnjxz.jpg",
+            "res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikam2_kxzjgm.jpg"]
+        
+    },
+    {
+        description: "Genshin Impact Music Clear Acrylic Charm - KAZUHA",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-KAZUHA",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikaz1_lxf9wg.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884416/samples/ShopItemBag/ShopItemBagCollection/gikaz1_lxf9wg.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884415/samples/ShopItemBag/ShopItemBagCollection/gikaz2_svh58p.jpg"]
+        
+    },
+    {
+        description: "Genshin-Impact-Music-Clear-Acrylic-Charm-MONA",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-MONA",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884414/samples/ShopItemBag/ShopItemBagCollection/gim1_dbmtpg.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884414/samples/ShopItemBag/ShopItemBagCollection/gim1_dbmtpg.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884412/samples/ShopItemBag/ShopItemBagCollection/gim2_slhyhj.jpg"]
+        
+    },
+    {
+        description: "Genshin-Impact-Music-Clear-Acrylic-Charm-QIQI",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-QIQI",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giq1_javqlo.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giq1_javqlo.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giq2_pfympx.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884414/samples/ShopItemBag/ShopItemBagCollection/giq3_csioh9.jpg"]
+        
+    },
+    {
+        description: "A5-Genshin-Impact-Weekly-Planner",
+        shop_item_url_path:"A5-Genshin-Impact-Weekly-Planner",
+        image_preview:["https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giwp_tpmmon.jpg"],
+        images_main:[
+            "https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884413/samples/ShopItemBag/ShopItemBagCollection/giwp_tpmmon.jpg"]
+        
+    },
+    {
+        description: "Genshin-Impact-Music-Clear-Acrylic-Charm-YOIMIYA",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-YOIMIYA",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884410/samples/ShopItemBag/ShopItemBagCollection/giy1_e0nf4k.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884410/samples/ShopItemBag/ShopItemBagCollection/giy1_e0nf4k.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884410/samples/ShopItemBag/ShopItemBagCollection/giy2_gorhr2.jpg"]
+        
+    },
+    {
+        description: "Genshin-Impact-Music-Clear-Acrylic-Charm-ZHONGLI",
+        shop_item_url_path:"Genshin-Impact-Music-Clear-Acrylic-Charm-ZHONGLI",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884409/samples/ShopItemBag/ShopItemBagCollection/giz1_rlnkhm.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884409/samples/ShopItemBag/ShopItemBagCollection/giz1_rlnkhm.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884410/samples/ShopItemBag/ShopItemBagCollection/giz2_ljrqov.jpg"]
+        
+    },
+    {
+        description: "Jelly-Neko-Subscriber-Badges",
+        shop_item_url_path:"Jelly-Neko-Subscriber-Badges",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884409/samples/ShopItemBag/ShopItemBagCollection/giz1_rlnkhm.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884408/samples/ShopItemBag/ShopItemBagCollection/jnsb_yftgpu.jpg"]
+        
+    },
+    {
+        description: "K/DA-Inspired-Stream",
+        shop_item_url_path:"K/DA-Inspired-Stream",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884405/samples/ShopItemBag/ShopItemBagCollection/kda1_h4bfeo.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884405/samples/ShopItemBag/ShopItemBagCollection/kda1_h4bfeo.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884409/samples/ShopItemBag/ShopItemBagCollection/kda2_ht0lpc.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884406/samples/ShopItemBag/ShopItemBagCollection/kda3_jtpz76.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/kda4_kc8wkb.jpg"]
+        
+    },
+    {
+        description: "LIMITED-ADD-ON-Cat-Succulent-Planter-Subscriber-Badge",
+        shop_item_url_path:"LIMITED-ADD-ON-Cat-Succulent-Planter-Subscriber-Badge",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/lacspsb_eugx3d.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/lacspsb_eugx3d.jpg"]
+        
+    },
+    {
+        description: "Moonboat-Adventure-Holographic-Vinyl-Sticker",
+        shop_item_url_path:"Moonboat-Adventure-Holographic-Vinyl-Sticker",
+        image_preview:["https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884402/samples/ShopItemBag/ShopItemBagCollection/mahvs1_aw62w2.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884402/samples/ShopItemBag/ShopItemBagCollection/mahvs1_aw62w2.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/mahvs2_pthn6q.jpg"]
+        
+    },
+    {
+        description: "Milk-Carton-Subscriber-Badges",
+        shop_item_url_path:"Milk-Carton-Subscriber-Badges",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/mcsb_ntbbuo.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/mcsb_ntbbuo.jpg"]
+        
+    },
+    {
+        description: "Magic-Girl-Subscriber-Badges",
+        shop_item_url_path:"Magic-Girl-Subscriber-Badges",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/mgsb_qw8c1b.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/mgsb_qw8c1b.jpg"]
+        
+    },
+    {
+        description: "Sakura-Blossom-Subscriber-Badges",
+        shop_item_url_path:"Sakura-Blossom-Subscriber-Badges",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/sbsb1_yrqkzo.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/sbsb1_yrqkzo.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/sbsb2_hsl089.jpg"]
+        
+    },
+    {
+        description: "Sakura-Blossom-Stream-Package-A",
+        shop_item_url_path:"Sakura-Blossom-Stream-Package-A",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884408/samples/ShopItemBag/ShopItemBagCollection/sbspa_shqqpt.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/sbsb1_yrqkzo.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884397/samples/ShopItemBag/ShopItemBagCollection/sbsb2_hsl089.jpg"]
+        
+    },
+    {
+        description: "Sakura-Blossom-Stream-Package-B",
+        shop_item_url_path:"Sakura-Blossom-Stream-Package-B",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884407/samples/ShopItemBag/ShopItemBagCollection/sbspb1_iqrf1x.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884407/samples/ShopItemBag/ShopItemBagCollection/sbspb1_iqrf1x.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884408/samples/ShopItemBag/ShopItemBagCollection/sbspb2_jzbyoc.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/sbspb3_aylqkv.jpg"]
+        
+    },
+    {
+        description: "Strawberry-Shibe-Subscriber-Badges",
+        shop_item_url_path:"Strawberry-Shibe-Subscriber-Badges",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/sssb1_yvt1t6.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/sssb1_yvt1t6.jpg","http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884404/samples/ShopItemBag/ShopItemBagCollection/sssb1_yvt1t6.jpg"],
+            
+        
+    },
+    {
+        description: "Usagi-Pastel-Moon-Subscriber-Badges",
+        shop_item_url_path:"Usagi-Pastel-Moon-Subscriber-Badges",
+        image_preview:["https://res.cloudinary.com/dzspnmwcq/image/upload/v1672884403/samples/ShopItemBag/ShopItemBagCollection/upmsb1_et4exa.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884403/samples/ShopItemBag/ShopItemBagCollection/upmsb1_et4exa.jpg", "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884402/samples/ShopItemBag/ShopItemBagCollection/upmsb2_elg0ij.jpg"],
+
+        
+    },
+    {
+        description: "Vitasoy Neko Matte Vinyl Stickers",
+        shop_item_url_path:"Vitasoy-Neko-Matte-Vinyl-Stickers",
+        image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/vnmvs1_c87daa.jpg"],
+        images_main:[
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/vnmvs1_c87daa.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884398/samples/ShopItemBag/ShopItemBagCollection/vnmvs2_jui8gh.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884402/samples/ShopItemBag/ShopItemBagCollection/vnmvs3_aqdesh.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884400/samples/ShopItemBag/ShopItemBagCollection/vnmvs4_yy3pcv.jpg",
+            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884406/samples/ShopItemBag/ShopItemBagCollection/vnmvs5_iwefcx.jpg"]
+        
+    }
+]
+
+
+
+
+const ShopItemSchema = new mongoose.Schema(
+    {
+        
+        description:{
+            type:String,
+            required: true
+        },
+        image_preview:[{
+            type:String,
+            required: true
+        }],
+        images_main:[{
+            type:String,
+            required: true
+        }],
+        shop_item_url_path:{
+            type:String,
+            required: true
+        }
+        
+        
+    }
+)
+
+const ShopItems = mongoose.model("ShopItems", ShopItemSchema )
+const dataToInsert = shopItemsToInsert.map((shopItem)=>{
+    return new ShopItems(shopItem) 
+})
+ShopItems.insertMany(dataToInsert).then((doc)=>{
+    console.log(doc.length + " Docs added to DB")
+    
+}).catch((err)=>{
+    console.log(err)
+})
+
+
+
 const ArtWorkImagesSchema = new mongoose.Schema(
     {
         id: {
@@ -30,6 +611,7 @@ const ArtWorkImagesSchema = new mongoose.Schema(
     }
 
 )
+
 
 const ArtWorkImages = mongoose.model("ArtWorkImages", ArtWorkImagesSchema)
 
@@ -224,14 +806,12 @@ app.get("/commissions-images", (req, res) => {
 
 app.get("/shop-item-bag-preview-images", (req, res) => {
     ShopItemBagPreviews.find({}, (err, data) => {
-            if (err) return res.status(500).send(err);
-            res.json(data)
-            console.log(data)
-        }
+        if (err) return res.status(500).send(err);
+        res.json(data)
+        console.log(data)
+    }
     )
 })
-
-
 
 app.use("/v1", route);
 
@@ -249,31 +829,27 @@ const pusher = new Pusher({
 
 const emailContactSchema = new mongoose.Schema(
     {
-        
+
         name: {
             type: String,
-            
+
         },
         email: {
             type: String,
-            
-        },
-        number: {
-            type: Number,
-            
+
         },
         message: {
             type: String,
-            
+
         }
     }
 )
 
-const emailStorage = mongoose.model("Emailmessages",emailContactSchema )
+const emailStorage = mongoose.model("Emailmessages", emailContactSchema)
 
-  pusher.trigger("my-channel", "my-event", {
+pusher.trigger("my-channel", "my-event", {
     message: "hello world"
-  });
+});
 //While the response is being sent through to the API, nodemailer will create an SMTP connection to the nodemailer server.
 const contactEmail = nodemailer.createTransport({
     service: "gmail",
@@ -296,9 +872,8 @@ contactEmail.verify((error) => {
 app.post("/contact", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
-    const number = req.body.number;
     const message = req.body.message;
-    emailStorage.create({name:req.body.name, email:req.body.email, number:req.body.number, message:req.body.message}, (err)=>{
+    emailStorage.create({ name: req.body.name, email: req.body.email, message: req.body.message }, (err) => {
         console.log(JSON.stringify(err))
         if (err) {
             return res.status(500).send(err);
@@ -309,7 +884,6 @@ app.post("/contact", (req, res) => {
         to: "drloveiscrazy@gmail.com",
         html: `<p>${email}</p>
               <p>${name}</p>
-              <p>${number}</p>
               <p>${message}</p>`,
     };
     console.log(mail)

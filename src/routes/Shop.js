@@ -36,7 +36,7 @@ useEffect(()=>{
   return (
     <div>
        <h1>Shop, Etsy-Previews</h1>
-       <p>These images are previews</p>
+       <p>These images are previews only</p>
       <Box >
             <Grid container spacing={3}>
               {ShopItems.map(
