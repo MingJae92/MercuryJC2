@@ -7,6 +7,7 @@ import MyWork from './routes/MyWork';
 import Shop from './routes/Shop';
 import ContactMe from './routes/ContactMe';    
 import {useNavigate, useLocation} from "react-router-dom"
+import Shopfullimage from './routes/Shopfullimage'
 import Giwp from "./ImageRoutes/Giwp";
 import Ac from './ImageRoutes/Ac';
 import Bcs from './ImageRoutes/Bcs';
@@ -60,7 +61,8 @@ function App() {
               <Route path="/Commissions" element={<Commissions />}></Route>
               <Route path="/My-Work" element={<MyWork />}></Route>
               <Route  path="/Shop" element={<Shop/>}></Route>
-               <Route path="/Shop/Animal-Crossing-ACNH-Inspired-Leaf-Subscriber-Badges-Package" element={<Ac/>}/>
+              <Route path="/Shop/:shop_item_url_path" element={<Shopfullimage/>}></Route>
+               {/* <Route path="/Shop/Animal-Crossing-ACNH-Inspired-Leaf-Subscriber-Badges-Package" element={<Ac/>}/>
                <Route path="Shop/A5-Genshin-Impact-Weekly-Planner" element={<Giwp />} />
                <Route path="Shop/BTS-Permission-To-Dance-Metallic-Sticker" element={<Bts />} />
                <Route path="Shop/Butter-Cat-Stickers" element={<Bcs />} />
@@ -93,7 +95,7 @@ function App() {
                <Route path='Shop/Sakura-Blossom-Subscriber-Badges' element={<Sbsb/>}/>
                <Route path='Shop/Strawberry-Shibe-Subscriber-Badges' element={<Sssb/>}/>
                <Route path='Shop/Usagi-Pastel-Moon-Subscriber-Badges' element={<Upmsb/>}/>
-               <Route exact path='Shop/Vitasoy-Neko-Matte-Vinyl-Stickers' element={<Vnmvs/>}/>
+               <Route exact path='Shop/Vitasoy-Neko-Matte-Vinyl-Stickers' element={<Vnmvs/>}/> */}
               <Route path="/Contact-Me" element={<ContactMe />}></Route> 
           </Routes>  
         
