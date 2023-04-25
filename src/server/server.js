@@ -579,6 +579,7 @@ app.get("/commissions-images", (req, res) => {
 })
 
 app.get("/shop-item-bag-preview-images", (req, res) => {
+    
     ShopItemBagPreviews.find({}, (err, data) => {
         if (err) return res.status(500).send(err);
         res.json(data)
@@ -587,12 +588,22 @@ app.get("/shop-item-bag-preview-images", (req, res) => {
     )
 })
 
+app.get("/Shop/shop-items", (req, res)=>{
+    ShopItems.find({}, (err, data) => {
+        if (err) return res.status(500).send(err);
+        res.json(data)
+        // console.log(data)
+    } )
+})
+
 app.get("/Shop/:shop_item_url_path", (req, res)=>{
     const{shop_item_url_path } = req.params
    
     ShopItems.find({
         shop_item_url_path
-        :shop_item_url_path}, (err, data)=>{
+        :shop_item_url_path,
+        
+    }, (err, data)=>{
         if (err) return res.status(500).send(err);
         res.json(data)
     })

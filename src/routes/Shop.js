@@ -9,6 +9,7 @@ import {Link} from "react-router-dom"
 import Footer from './Footer';
 import ScrollToTop from './ScrollUpButton';
 import axios from 'axios';
+import { Params, useParams } from 'react-router';
 
 //ShopItems component stores all the images for the shop webpage.
 //ShopItems component is then applied with the map method to display the shop items.
@@ -25,12 +26,17 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Shop = () => {
 const [shop, setShop] = useState([])
+const [shopItems, setShopItems]= useState([])
+
 
 useEffect(()=>{
-  axios.get("http://localhost:7000/shop-item-bag-preview-images").then((res)=>{
+  
+  axios.get("http://localhost:7000/Shop/shop-items").then((res)=>{
     const shopItemBagPreviewImagesData = res.data;
     console.log(shopItemBagPreviewImagesData)
     setShop(shopItemBagPreviewImagesData)
+    const shopItemsData = res.data
+    setShopItems(shopItemsData)
   })
 },[])
   return (
@@ -39,12 +45,14 @@ useEffect(()=>{
        <p>These images are previews only</p>
       <Box >
             <Grid container spacing={3}>
-              {ShopItems.map(
+              {shop.map(
                 (item )=>(
                   <Grid item xs={4}>
                     <Item >
-                      <h4>{item.name}</h4>
-                      <Link to={`/Shop/${item.path}`}><img src={item.img}/></Link>
+                      
+                      
+             
+                   <Link to={`/Shop/${item.shop_item_url_path}`}><img src={item.image_preview}/></Link>
                       
                     </Item>
                    

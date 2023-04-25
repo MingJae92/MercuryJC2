@@ -8,40 +8,40 @@ import Shop from './routes/Shop';
 import ContactMe from './routes/ContactMe';    
 import {useNavigate, useLocation} from "react-router-dom"
 import Shopfullimage from './routes/Shopfullimage'
-import Giwp from "./ImageRoutes/Giwp";
-import Ac from './ImageRoutes/Ac';
-import Bcs from './ImageRoutes/Bcs';
-import Bts from './ImageRoutes/Bts';
-import Cpsb from "./ImageRoutes/Cpsb";
-import Cspsba from "./ImageRoutes/Cspsba";
-import Cspsbb from "./ImageRoutes/Cspsbb";
-import Ddhvs from "./ImageRoutes/Ddhvs";
-import Gicvs from "./ImageRoutes/Gicvs";
-import Giesb from "./ImageRoutes/Giesb";
-import Gic from "./ImageRoutes/Gic"
-import Gie from "./ImageRoutes/Gie"
-import Gig from "./ImageRoutes/Gig"
-import Gih from "./ImageRoutes/Gih"
-import Gij from "./ImageRoutes/Gij"
-import Gikam from "./ImageRoutes/Gikam"
-import Gikaz from "./ImageRoutes/Gikaz";
-import Gik from "./ImageRoutes/Gik";
-import Gim from "./ImageRoutes/Gim"
-import Giq from "./ImageRoutes/Giq";
-import Giy from "./ImageRoutes/Giy"
-import Giz from "./ImageRoutes/Giz"
-import Jnsb from "./ImageRoutes/Jnsb";
-import Kda from "./ImageRoutes/Kda";
-import Lacspsb from "./ImageRoutes/Lacspsb";
-import Mgsb from "./ImageRoutes/Mgsb";
-import Mcsb from "./ImageRoutes/Mcsb";
-import Mahvs from "./ImageRoutes/Mahvs";
-import Sbspa from "./ImageRoutes/Sbspa";
-import Sbspb from "./ImageRoutes/Sbspb";
-import Sbsb from "./ImageRoutes/Sbsb";
-import Sssb from "./ImageRoutes/Sssb";
-import Upmsb from "./ImageRoutes/Upmsb";
-import Vnmvs from "./ImageRoutes/Vnmvs";
+// import Giwp from "./ImageRoutes/Giwp";
+// import Ac from './ImageRoutes/Ac';
+// import Bcs from './ImageRoutes/Bcs';
+// import Bts from './ImageRoutes/Bts';
+// import Cpsb from "./ImageRoutes/Cpsb";
+// import Cspsba from "./ImageRoutes/Cspsba";
+// import Cspsbb from "./ImageRoutes/Cspsbb";
+// import Ddhvs from "./ImageRoutes/Ddhvs";
+// import Gicvs from "./ImageRoutes/Gicvs";
+// import Giesb from "./ImageRoutes/Giesb";
+// import Gic from "./ImageRoutes/Gic"
+// import Gie from "./ImageRoutes/Gie"
+// import Gig from "./ImageRoutes/Gig"
+// import Gih from "./ImageRoutes/Gih"
+// import Gij from "./ImageRoutes/Gij"
+// import Gikam from "./ImageRoutes/Gikam"
+// import Gikaz from "./ImageRoutes/Gikaz";
+// import Gik from "./ImageRoutes/Gik";
+// import Gim from "./ImageRoutes/Gim"
+// import Giq from "./ImageRoutes/Giq";
+// import Giy from "./ImageRoutes/Giy"
+// import Giz from "./ImageRoutes/Giz"
+// import Jnsb from "./ImageRoutes/Jnsb";
+// import Kda from "./ImageRoutes/Kda";
+// import Lacspsb from "./ImageRoutes/Lacspsb";
+// import Mgsb from "./ImageRoutes/Mgsb";
+// import Mcsb from "./ImageRoutes/Mcsb";
+// import Mahvs from "./ImageRoutes/Mahvs";
+// import Sbspa from "./ImageRoutes/Sbspa";
+// import Sbspb from "./ImageRoutes/Sbspb";
+// import Sbsb from "./ImageRoutes/Sbsb";
+// import Sssb from "./ImageRoutes/Sssb";
+// import Upmsb from "./ImageRoutes/Upmsb";
+// import Vnmvs from "./ImageRoutes/Vnmvs";
 
 function App() {
   //Navigation for sliding nav bar. 
