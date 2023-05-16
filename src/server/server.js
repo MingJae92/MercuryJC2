@@ -526,7 +526,7 @@ const route = express.Router();
 const port = process.env.APISERVERPORT
 
 connectDB()
-const schema = new mongoose.Schema({ firstname: 'string', comment: 'string' });
+const schema = new mongoose.Schema({ firstname: 'string', comment: 'string', id:'string' });
 const Comments = mongoose.model('Comments', schema);
 
 // Comments.create({ firstname: 'Legend', lastname:'Lee', comment:'Hello' }, function (err, small) {
@@ -540,7 +540,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/comments", (req, res) => {
+app.get("/comments/:id", (req, res) => {
     Comments.find({}, (err, data) => {
         if (err) return res.status(500).send(err);
         res.json(data)
@@ -549,7 +549,7 @@ app.get("/comments", (req, res) => {
 
 app.post("/comments", (req, res) => {
     console.log(JSON.stringify(req.body))
-    Comments.create({ firstname: req.body.firstname, comment: req.body.comment }, function (err, newComment) {
+    Comments.create({ firstname: req.body.firstname, comment: req.body.comment, shopitemId:req.body.shopitemId }, function (err, newComment) {
         console.log(JSON.stringify(err))
         console.log(JSON.stringify(newComment))
         if (err) {
@@ -693,4 +693,6 @@ app.post("/contact", (req, res) => {
         }
     });
 });
+
+
 

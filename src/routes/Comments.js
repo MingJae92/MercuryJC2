@@ -5,8 +5,9 @@ import "./Comments.css"
 import axios from 'axios';
 import Pusher from "pusher-js"
 
+//to figure out how pass a ID comments component, passing params to component
 
-const Comments = () => {
+const Comments = (props) => {
   const [userName, setUserName] = useState("")
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState("")
@@ -21,6 +22,7 @@ const Comments = () => {
       firstname: userName,
       // lastname:"Lee",
       comment: newComment,
+      id: props.shopItemId,
       votes: 0
     };
     //Axios will use a post method to post users comments.
@@ -30,6 +32,7 @@ const Comments = () => {
       .then(() => {
         setUserName("")
         setNewComment("")
+        
       })
       .catch(error => console.log(error));
   }
@@ -45,29 +48,29 @@ const Comments = () => {
     })
     const channel = pusher.subscribe("comments");
     channel.bind("newComment", data => {
-      setComments(arr=> [...arr, data.comment])
+      setComments(arr => [...arr, data.comment])
       // console.log(comments)
-    
+
     })
-console.log("http://localhost:7000/comments")
-      axios.get("http://localhost:7000/comments").then(({ data }) => {
-        setComments(data)
-      }).catch(err => console.log(err))
+    console.log("http://localhost:7000/comments")
+    axios.get(`http://localhost:7000/comments/{shopItemId}`).then(({ data }) => {
+      setComments(data)
+    }).catch(err => console.log(err))
 
   }, [])
-  const userComments = comments.map(item=>
-   <div>
-    <Paper style={{ padding: "40px 20px" }}>
-      <Grid container wrap="nowrap" spacing={2}>
-        <Grid justifyContent="left" item xs zeroMinWidth>
-          <p style={{ textAlign: "left" }}>{item.firstname}</p>
-          {/* <p style={{ textAlign: "left" }}>{item.lastname}</p> */}
-          <p style={{ textAlign: "left" }}>{item.comment}</p>
+  const userComments = comments.map(item =>
+    <div>
+      <Paper style={{ padding: "40px 20px" }}>
+        <Grid container wrap="nowrap" spacing={2}>
+          <Grid justifyContent="left" item xs zeroMinWidth>
+            <p style={{ textAlign: "left" }}>{item.firstname}</p>
+            {/* <p style={{ textAlign: "left" }}>{item.lastname}</p> */}
+            <p style={{ textAlign: "left" }}>{item.comment}</p>
+          </Grid>
         </Grid>
-      </Grid>
-      <Divider variant="fullWidth" style={{ margin: "30px 0" }} />
-    </Paper>
-   </div>
+        <Divider variant="fullWidth" style={{ margin: "30px 0" }} />
+      </Paper>
+    </div>
 
   )
 
@@ -97,7 +100,7 @@ console.log("http://localhost:7000/comments")
               </Grid>
               <section><h1>Comments</h1>{userComments}</section>
             </form>
-            
+
           </CardContent>
         </Card>
       </Grid>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './Shop.css'
-import  ShopItems from "./ShopItems"
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -9,7 +8,7 @@ import {Link} from "react-router-dom"
 import Footer from './Footer';
 import ScrollToTop from './ScrollUpButton';
 import axios from 'axios';
-import { Params, useParams } from 'react-router';
+
 
 //ShopItems component stores all the images for the shop webpage.
 //ShopItems component is then applied with the map method to display the shop items.

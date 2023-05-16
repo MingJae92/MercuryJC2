@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import axios from "axios"
+import Comments from "./Comments"
 
-const Shopfullimage = () => {
+const Shopfullimage = (data) => {
     const [shopFullImage, setShopFullImage] = useState([])
-
+    
     let { shop_item_url_path } = useParams()
     const url = `http://localhost:7000/Shop/${shop_item_url_path}`
 
@@ -22,8 +23,11 @@ const Shopfullimage = () => {
                 <div key={item.id}>
                     <h1>{item.description}</h1>
                     {item.images_main.map((image_url) => (
-                        <img src={image_url}/>
+                        <img src={image_url} />
+                       
                     ))}
+                   
+            <Comments shopItemId={item.id}/>
                 </div>))}
         </div>
     )
