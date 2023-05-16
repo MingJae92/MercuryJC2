@@ -343,6 +343,10 @@ const ShopItemSchema = new mongoose.Schema(
         shop_item_url_path:{
             type:String,
             required: true
+        },
+        id:{
+            type:String,
+            required: true
         }
         
         
@@ -526,7 +530,7 @@ const route = express.Router();
 const port = process.env.APISERVERPORT
 
 connectDB()
-const schema = new mongoose.Schema({ firstname: 'string', comment: 'string', id:'string' });
+const schema = new mongoose.Schema({ firstname: 'string', comment: 'string', shopItemId:'string' });
 const Comments = mongoose.model('Comments', schema);
 
 // Comments.create({ firstname: 'Legend', lastname:'Lee', comment:'Hello' }, function (err, small) {
@@ -541,7 +545,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/comments/:id", (req, res) => {
-    Comments.find({}, (err, data) => {
+    const {shopItemId}=req.params
+    Comments.find({shopItemId:shopItemId}, (err, data) => {
         if (err) return res.status(500).send(err);
         res.json(data)
     })
@@ -549,7 +554,7 @@ app.get("/comments/:id", (req, res) => {
 
 app.post("/comments", (req, res) => {
     console.log(JSON.stringify(req.body))
-    Comments.create({ firstname: req.body.firstname, comment: req.body.comment, shopitemId:req.body.shopitemId }, function (err, newComment) {
+    Comments.create({ firstname: req.body.firstname, comment: req.body.comment, id:req.body.id }, function (err, newComment) {
         console.log(JSON.stringify(err))
         console.log(JSON.stringify(newComment))
         if (err) {

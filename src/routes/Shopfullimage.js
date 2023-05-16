@@ -3,7 +3,7 @@ import { useParams } from "react-router"
 import axios from "axios"
 import Comments from "./Comments"
 
-const Shopfullimage = (data) => {
+const Shopfullimage = () => {
     const [shopFullImage, setShopFullImage] = useState([])
     
     let { shop_item_url_path } = useParams()
