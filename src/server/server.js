@@ -554,7 +554,7 @@ app.get("/comments/:id", (req, res) => {
 
 app.post("/comments", (req, res) => {
     console.log(JSON.stringify(req.body))
-    Comments.create({ firstname: req.body.firstname, comment: req.body.comment, id:req.body.id }, function (err, newComment) {
+    Comments.create({ firstname: req.body.firstname, comment: req.body.comment, shopItemId:req.body.shopItemId }, function (err, newComment) {
         console.log(JSON.stringify(err))
         console.log(JSON.stringify(newComment))
         if (err) {

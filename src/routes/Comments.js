@@ -5,6 +5,7 @@ import "./Comments.css"
 import axios from 'axios';
 import Pusher from "pusher-js"
 
+
 //to figure out how pass a ID comments component, passing params to component
 
 const Comments = (props) => {
@@ -22,7 +23,7 @@ const Comments = (props) => {
       firstname: userName,
       // lastname:"Lee",
       comment: newComment,
-      id: props.shopItemId,
+      shopItemId: props.shopItemId,
       votes: 0
     };
     //Axios will use a post method to post users comments.
@@ -42,13 +43,17 @@ const Comments = (props) => {
   //App and cluster key will be running from env file
   //
   useEffect(() => {
+    
     const pusher = new Pusher(process.env.REACT_APP_PUSHER_APP_KEY, {
       cluster: process.env.REACT_APP_PUSHER_APP_CLUSTER,
       encrypted: true,
     })
     const channel = pusher.subscribe("comments");
     channel.bind("newComment", data => {
-      setComments(arr => [...arr, data.comment])
+      if(data.comment===data.shopItemId){
+        setComments(arr => [...arr, data.comment])
+      }
+      
       // console.log(comments)
 
     })

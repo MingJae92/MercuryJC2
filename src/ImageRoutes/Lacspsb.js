@@ -49,7 +49,7 @@ const Lacspsb = () => {
           onClose={ closeImageViewer }
         />
       )}
-    <Comments/>
+    <Comments data={shopItemId}/>
     </div>
   )
 }

@@ -27,7 +27,7 @@ const Shopfullimage = () => {
                        
                     ))}
                    
-            <Comments shopItemId={item.id}/>
+            <Comments shopItemId={item._id}/>
                 </div>))}
         </div>
     )
