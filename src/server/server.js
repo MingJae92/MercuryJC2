@@ -72,7 +72,8 @@ const shopItemsToInsert = [
         image_preview:["http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157903/samples/ShopItemBag/ShopItemBagPreview/ddhvs1_co7as1.jpg"],
         images_main:[
             "http://res.cloudinary.com/dzspnmwcq/image/upload/v1678157903/samples/ShopItemBag/ShopItemBagPreview/ddhvs1_co7as1.jpg",
-            "http://res.cloudinary.com/dzspnmwcq/image/upload/v1672884401/samples/ShopItemBag/ShopItemBagCollection/mahvs2_pthn6q.jpg"]
+            
+           ]
         
     },
     {
@@ -544,8 +545,9 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/comments/:id", (req, res) => {
+app.get("/comments/:shopItemId", (req, res) => {
     const {shopItemId}=req.params
+    console.log(shopItemId, "comments that get shop item Id")
     Comments.find({shopItemId:shopItemId}, (err, data) => {
         if (err) return res.status(500).send(err);
         res.json(data)

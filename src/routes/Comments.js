@@ -50,7 +50,7 @@ const Comments = (props) => {
     })
     const channel = pusher.subscribe("comments");
     channel.bind("newComment", data => {
-      if(data.comment===data.shopItemId){
+      if(data.comment.shopItemId===props.shopItemId){
         setComments(arr => [...arr, data.comment])
       }
       
@@ -58,7 +58,7 @@ const Comments = (props) => {
 
     })
     console.log("http://localhost:7000/comments")
-    axios.get(`http://localhost:7000/comments/{shopItemId}`).then(({ data }) => {
+    axios.get(`http://localhost:7000/comments/${props.shopItemId}`).then(({ data }) => {
       setComments(data)
     }).catch(err => console.log(err))
 
