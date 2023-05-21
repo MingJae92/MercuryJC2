@@ -1,16 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './Commissions.css'
-import Pardofelis from "../ArtCommissionImages/Illustrationfullcolour/Bust/Pardofelis.jpg"
-import YaeMiko from "../ArtCommissionImages/Illustrationfullcolour/Bust/YaeMiko.jpg"
-import MonarchMona from "../ArtCommissionImages/Illustrationfullcolour/Waist-Up/MonarchMona.jpg"
-import PoroKingxMatty from "../ArtCommissionImages/Illustrationfullcolour/Waist-Up/PoroKingxMatty.jpeg"
-import PorcelainGanyu from "../ArtCommissionImages/Illustrationfullcolour/Full-Body/PorcelainGanyu.png"
-import StarchasmHutao from "../ArtCommissionImages/Illustrationfullcolour/Full-Body/StarchasmHutao.jpg"
-import Headshot1 from "../ArtCommissionImages/Illustrationsimplecolour/headshot.jpeg"
-import Waistup1 from "../ArtCommissionImages/Illustrationsimplecolour/waistup.jpeg"
-import Headshot2 from "../ArtCommissionImages/Chibi/headshot.png"
-import Fullbody from "../ArtCommissionImages/Chibi/fullbody.png"
-import Emotes from "../ArtCommissionImages/Emotebadges/emotes.jpeg"
 import Footer from './Footer'
 import ScrollToTop from './ScrollUpButton'
 import axios from 'axios'
