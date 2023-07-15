@@ -19,7 +19,7 @@ const Homepage = () => {
   }, [])
   return (
     <div>
-      <h1>Homepage</h1>
+      <h1>Homepage!</h1>
 
       <Carousel>
         {homepage.map((item) => (<img className='art_work' src={item.imageUrl} />))}
