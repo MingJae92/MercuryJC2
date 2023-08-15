@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Homepage.css'
-import Carousel from 'react-material-ui-carousel'
-import ArtWorkImages from '../ArtWorkImages'
+import { Typography } from '@mui/material';
+import  Carousel  from 'react-material-ui-carousel';
 import Footer from './Footer'
 import axios from 'axios'
 
@@ -11,7 +11,7 @@ import axios from 'axios'
 const Homepage = () => {
   const [homepage, setHomepage] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:7000/My-Work-Collection").then((res) => {
+    axios.get(`${process.env.REACT_APP_MERCURYJC_URL}/My-Work-Collection`).then((res) => {
       const homepageWorkCollectionData = res.data
       console.log(homepageWorkCollectionData)
       setHomepage(homepageWorkCollectionData)
@@ -19,10 +19,14 @@ const Homepage = () => {
   }, [])
   return (
     <div>
-      <h1>Homepage</h1>
+      <Typography variant="h4" align="center" gutterBottom>
+        Homepage
+      </Typography>
 
       <Carousel>
-        {homepage.map((item) => (<img className='art_work' src={item.imageUrl} />))}
+        {homepage.map((item, index) => (
+          <img key={index} className="art_work" src={item.imageUrl} alt={`Artwork ${index}`} />
+        ))}
       </Carousel>
       <Footer />
     </div>

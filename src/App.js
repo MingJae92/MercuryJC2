@@ -21,7 +21,7 @@ function App() {
         <Sidebar navigate={navigation} />
         {console.log(location.pathname)}
 
-        <Routes>
+    <Routes>
           <Route path="/Homepage" element={<Homepage />} />
           <Route path="/About-Me" element={<AboutMe />}></Route>
           <Route path="/Commissions" element={<Commissions />}></Route>
@@ -31,6 +31,8 @@ function App() {
           <Route path="/Contact-Me" element={<ContactMe />}></Route>
         </Routes>
 
+
+        
       </header>
     </div>
   );

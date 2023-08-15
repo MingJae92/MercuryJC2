@@ -7,7 +7,7 @@ const Shopfullimage = () => {
     const [shopFullImage, setShopFullImage] = useState([])
     
     let { shop_item_url_path } = useParams()
-    const url = `http://localhost:7000/Shop/${shop_item_url_path}`
+    const url = `${process.env.REACT_APP_MERCURYJC_URL}/Shop/${shop_item_url_path}`
 
     useEffect(() => {
         axios.get(url).then((res) => {

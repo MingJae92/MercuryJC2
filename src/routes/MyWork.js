@@ -26,7 +26,7 @@ const MyWork = () => {
   const [myWork, setMyWork]= useState([])
 
   useEffect(()=>{
-    axios.get("http://localhost:7000/My-Work-Collection").then((res)=>{
+    axios.get(`${process.env.REACT_APP_MERCURYJC_URL}/My-Work-Collection`).then((res)=>{
       const imageDescription = res.data
       setMyWork(imageDescription)
       // console.log(res.data) 
@@ -59,3 +59,49 @@ const MyWork = () => {
 
 export default MyWork
 
+// import React, { useEffect, useState } from 'react';
+// import { styled } from '@mui/material/styles';
+// import Grid from '@mui/material/Grid';
+// import Paper from '@mui/material/Paper';
+// import Box from '@mui/material/Box';
+// import Footer from './Footer';
+// import ScrollToTop from './ScrollUpButton';
+// import axios from 'axios';
+
+// const Item = styled(Paper)(({ theme }) => ({
+//   textAlign: 'center',
+//   color: theme.palette.text.secondary,
+//   padding: theme.spacing(2), // Add spacing around each item
+// }));
+
+// const MyWork = () => {
+//   const [myWork, setMyWork] = useState([]);
+
+//   useEffect(() => {
+//     axios.get('${process.env.REACT_APP_MERCURYJC_URL}/My-Work-Collection').then((res) => {
+//       const imageDescription = res.data;
+//       setMyWork(imageDescription);
+//     });
+//   }, []);
+
+//   return (
+//     <div>
+//       <h1 style={{ textAlign: 'center', padding: '16px' }}>My Art Work</h1>
+//       <Box sx={{ flexGrow: 1, p: 2 }}>
+//         <Grid container spacing={2}>
+//           {myWork.map((item) => (
+//             <Grid item xs={12} sm={6} md={4} key={item.id}>
+//               <Item>
+//                 <img src={item.imageUrl} alt={item.description} />
+//               </Item>
+//             </Grid>
+//           ))}
+//         </Grid>
+//       </Box>
+//       <ScrollToTop />
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default MyWork;
