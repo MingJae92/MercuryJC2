@@ -22,6 +22,7 @@ function App() {
         {console.log(location.pathname)}
 
     <Routes>
+          <Route path="/" element={<Homepage/>}/>
           <Route path="/Homepage" element={<Homepage />} />
           <Route path="/About-Me" element={<AboutMe />}></Route>
           <Route path="/Commissions" element={<Commissions />}></Route>
