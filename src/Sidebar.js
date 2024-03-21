@@ -70,27 +70,27 @@ const Sidebar = ({ navigate }) => {
   const menuItems =[
     {
       text:"Homepage",
-      onClick:()=>navigate("/Homepage")
+      onClick:()=>navigate("/")
     },
     {
       text:"AboutMe",
-      onClick:()=>navigate("/About-Me")
+      onClick:()=>navigate("/aboutme")
     },
     {
       text:"Commissions",
-      onClick:()=>navigate("/Commissions")
+      onClick:()=>navigate("/commissions")
     },
     {
       text:"MyWork",
-      onClick:()=>navigate("/My-Work")
+      onClick:()=>navigate("/mywork")
     },
     {
       text:"Shop-Etsy-Preview",
-      onClick:()=>navigate("/Shop")
+      onClick:()=>navigate("/shop")
     },
     {
       text:"Contact-Me",
-      onClick:()=>navigate("/Contact-me")
+      onClick:()=>navigate("/contactme")
     }
 
   ]

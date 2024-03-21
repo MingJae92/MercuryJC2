@@ -23,13 +23,13 @@ function App() {
 
     <Routes>
           <Route path="/" element={<Homepage/>}/>
-          <Route path="/Homepage" element={<Homepage />} />
-          <Route path="/About-Me" element={<AboutMe />}></Route>
-          <Route path="/Commissions" element={<Commissions />}></Route>
-          <Route path="/My-Work" element={<MyWork />}></Route>
-          <Route path="/Shop" element={<Shop />}></Route>
-          <Route path="/Shop/:shop_item_url_path" element={<Shopfullimage />}></Route>
-          <Route path="/Contact-Me" element={<ContactMe />}></Route>
+          {/* <Route path="/homepage" element={<Homepage />} /> */}
+          <Route path="/aboutme" element={<AboutMe />}></Route>
+          <Route path="/commissions" element={<Commissions />}></Route>
+          <Route path="/mywork" element={<MyWork />}></Route>
+          <Route path="/shop" element={<Shop />}></Route>
+          <Route path="/shop/:shop_item_url_path" element={<Shopfullimage />}></Route>
+          <Route path="/contactme" element={<ContactMe />}></Route>
         </Routes>
 
 

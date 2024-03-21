@@ -8,23 +8,23 @@ import Shop from './Shop'
 
 const RoutesConfig = [
     {
-        path:"/Homepage",
+        path:"/homepage",
         component:Homepage, 
     },
     {
-        path:"/AboutMe",
+        path:"/aboutMe",
         component:AboutMe
     },
     {
-        path:"/Commissions",
+        path:"/commissions",
         component: Commissions
     },
     {
-        path:"/MyWork",
+        path:"/mywork",
         component: MyWork
     },
     {
-        path:"/Shop",
+        path:"/shop",
         component: Shop
     },
 ];

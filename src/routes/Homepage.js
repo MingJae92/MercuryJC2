@@ -19,9 +19,7 @@ const Homepage = () => {
   }, [])
   return (
     <div>
-      <Typography variant="h4" align="center" gutterBottom>
-        Homepage
-      </Typography>
+      <h1>Homepage</h1>
 
       <Carousel>
         {homepage.map((item, index) => (
