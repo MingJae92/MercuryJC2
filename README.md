@@ -1,7 +1,7 @@
-MercuryJC, FULL STACK WEB APPLCATION
+MERCURY JC, FULL STACK WEB APPLCATION
 
 Overview:
-Welcome to [Project Name], a comprehensive web application designed to streamline user interaction through a powerful combination of features including a sophisticated commenting system, an elegant image gallery, and a seamless emailing system. This project leverages MongoDB for robust data storage, ExpressJS for efficient server-side operations, ReactJS for a dynamic and engaging user interface, and NodeJS for seamless backend functionality. Real-time communication is facilitated by PusherJS, while Node Mailer ensures efficient email delivery.
+Welcome to MERCURY JC, a comprehensive web application designed to streamline user interaction through a powerful combination of features including a sophisticated commenting system, an elegant image gallery, and a seamless emailing system. This project leverages MongoDB for robust data storage, ExpressJS for efficient server-side operations, ReactJS for a dynamic and engaging user interface, and NodeJS for seamless backend functionality. Real-time communication is facilitated by PusherJS, while Node Mailer ensures efficient email delivery.
 
 Features:
 
