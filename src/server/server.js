@@ -528,7 +528,7 @@ const connectDB = async () => {
 }
 
 const route = express.Router();
-const port = process.env.APISERVERPORT
+const port = process.env.PORT
 
 connectDB()
 const schema = new mongoose.Schema({ firstname: 'string', comment: 'string', shopItemId:'string' });
