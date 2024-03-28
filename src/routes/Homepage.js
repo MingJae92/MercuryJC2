@@ -12,14 +12,16 @@ const Homepage = () => {
   const [homepage, setHomepage] = useState([])
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_MERCURYJC_URL}/My-Work-Collection`).then((res) => {
+      
       const homepageWorkCollectionData = res.data
       console.log(homepageWorkCollectionData)
       setHomepage(homepageWorkCollectionData)
     })
+    console.log(process.env.REACT_APP_MERCURYJC_URL)
   }, [])
   return (
     <div>
-      <h1>Homepage!!!</h1>
+      <h1>Homepage</h1>
 
       <Carousel>
         {homepage.map((item, index) => (
